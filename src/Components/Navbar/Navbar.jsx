@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { useLanguage } from "../../LanguageContext";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -81,9 +83,7 @@ const Navbar = () => {
           fotoskazki<span className="nav-span">.</span>
         </div>
 
-        {/* O'NG TOMONDAGI BOSHQARUV ELEMENTLARI */}
         <div className="nav-controls-wrapper">
-          {/* 1. TIL TANLASH (Doim ko'rinadi) */}
           <div className="lang-dropdown-container">
             <button
               className="lang-trigger-btn"
@@ -131,7 +131,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* 2. HAMBURGER TUGMASI (Mobilda ko'rinadi) */}
           <div
             className={`hamburger ${isMenuOpen ? "active" : ""}`}
             onClick={toggleMenu}
@@ -140,8 +139,25 @@ const Navbar = () => {
             <span className="bar"></span>
           </div>
 
-          {/* 3. MOBIL MENU (Faqat ochilganda chiqadi) */}
           <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
+          <div id="social-links-mobile">
+              <a
+                href="https://www.instagram.com/fotoskazki.uz/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faInstagram} /><span>Instagram</span>
+              </a>
+              <a
+                href="https://t.me/fotoskaz_bot"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faTelegram} /><span>Telegram</span>
+              </a>
+            </div>
             <a
               href="tel:+998919767600"
               className="nav-btn"
