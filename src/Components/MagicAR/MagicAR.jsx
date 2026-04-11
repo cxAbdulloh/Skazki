@@ -157,7 +157,7 @@ const MagicAR = () => {
             <p className="book-instruction">{t("book_tap_magic")}</p>
             <div className="book-wrapper">
               <img
-                src={assets.photo_3}
+                src={assets.photo_5}
                 alt=""
                 className="book-img"
                 data-flip-id="book"
@@ -165,19 +165,6 @@ const MagicAR = () => {
               <div className="book-tap-hint">{t("tap")}</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="book-zoom-modal" ref={modalRef} onClick={closeZoom}>
-        <div className="modal-content">
-          <img
-            ref={modalImageRef}
-            src={assets.photo_3}
-            alt="Zoomed Book"
-            className="zoomed-book-img"
-            data-flip-id="book"
-          />
-          <div className="close-btn">&times;</div>
         </div>
       </div>
     </section>
