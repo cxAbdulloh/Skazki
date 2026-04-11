@@ -1,0 +1,572 @@
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #ffcc00;
+  --gold: #c9963a;
+  --forest: #2d5a3d;
+}
+
+.books-section-wrapper {
+  padding: 150px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container-premium {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .container-premium {
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
+  }
+}
+
+.book-visual-area {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 2500px;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.book-visual-area.book-focus {
+  transform: scale(1.15) translateX(70px);
+  z-index: 100;
+}
+
+.book-3d-canvas {
+  width: 450px;
+  height: 550px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(10deg) rotateY(-8deg);
+  transition: transform 0.8s ease;
+}
+
+.book-3d-canvas:hover {
+  transform: rotateX(5deg) rotateY(-2deg);
+}
+
+/* --- MAGIC BOOKMARKS STYLE --- */
+.book-bookmarks-container {
+  position: absolute;
+  right: -45px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+  transform: translateZ(-10px);
+}
+
+.magic-bookmark {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-text {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--forest);
+  letter-spacing: 1px;
+}
+
+.magic-bookmark.active {
+  width: 75px;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.magic-bookmark.active .bookmark-text {
+  color: #fff;
+}
+
+.magic-bookmark:hover {
+  width: 80px;
+  background: rgba(201, 150, 58, 0.3);
+}
+
+.magic-bookmark.uz {
+  border-right: 4px solid #c9963a;
+}
+.magic-bookmark.ru {
+  border-right: 4px solid #c9963a;
+}
+.magic-bookmark.en {
+  border-right: 4px solid #c9963a;
+}
+
+.bookmark-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.magic-bookmark:hover .bookmark-glow {
+  opacity: 1;
+}
+
+/* --- KITOB SAHIFALARI --- */
+.book-leaf {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.book-leaf:nth-child(1) {
+  transform: translateZ(5px);
+}
+.book-leaf:nth-child(2) {
+  transform: translateZ(4px);
+}
+.book-leaf:nth-child(3) {
+  transform: translateZ(3px);
+}
+.book-leaf:nth-child(4) {
+  transform: translateZ(2px);
+}
+.book-leaf:nth-child(5) {
+  transform: translateZ(1px);
+}
+
+.book-leaf.is-flipped {
+  transform: rotateY(-115deg) translateZ(0px);
+}
+
+.leaf-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.leaf-side.front {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: inset -10px 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.inner-page-design {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+}
+
+.inner-page-design img.page-full-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.page-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  z-index: 5;
+  color: #fff;
+}
+
+.inner-page-design h3,
+.inner-page-design .page-num {
+  position: relative;
+  z-index: 6;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.inner-page-design .page-num {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 4px 10px;
+  z-index: 10;
+}
+
+.inner-page-design h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.page-mini-desc {
+  position: relative;
+  z-index: 6;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.leaf-side.front:has(.book-cover-wrapper) {
+  padding: 0;
+  border: none;
+  background: var(--forest);
+  box-shadow: 8px 10px 25px rgba(0, 0, 0, 0.3),
+    inset -5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaf-side.back {
+  background: #fdfdfd;
+  transform: rotateY(180deg);
+  border: 1px solid #d0d0d0;
+  padding: 30px;
+  box-shadow: inset 10px 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.book-cover-wrapper,
+.main-cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-cover-img {
+  object-fit: cover;
+  display: block;
+}
+
+.spine-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.2) 15%,
+    transparent 100%
+  );
+  z-index: 5;
+}
+
+.book-base-plate {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fdfaf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 18px 18px 4px;
+  z-index: 0;
+  text-align: center;
+  border-left: 12px solid #234730;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.book-text-area {
+  flex: 1;
+  max-width: 500px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.book-text-area.text-fade {
+  opacity: 0.2;
+  transform: translateX(-30px);
+  pointer-events: none;
+}
+
+.book-text-area h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  color: var(--forest);
+}
+
+.book-span {
+  color: #1a1a1a;
+}
+.summary-p {
+  font-size: 1.2rem;
+  color: #7a6a50;
+  line-height: 1.6;
+}
+
+
+.book-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.action-button {
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s ease-in;
+  font-family: "Trebuchet MS", sans-serif;
+  white-space: nowrap;
+}
+
+.action-button:hover {
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.next-book-btn {
+  background: transparent !important;
+  border: 2px solid var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+.next-book-btn:hover {
+  background: var(--gold) !important;
+  color: #fff !important;
+}
+
+/* --- RESPONSIVE QISMLARI --- */
+@media (max-width: 968px) {
+  .book-bookmarks-container {
+    right: -30px;
+    top: 30px;
+  }
+  .magic-bookmark {
+    width: 45px;
+    height: 35px;
+  }
+  .magic-bookmark.active {
+    width: 55px;
+  }
+  .book-3d-canvas {
+    width: 350px;
+    height: 450px;
+  }
+}
+
+.book-visual-area.book-switching {
+  opacity: 0;
+  transform: scale(0.9) translateY(40px) rotateY(-20deg);
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --book-width: 380px;
+    --book-height: 480px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-premium {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+  .book-text-area {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .book-visual-area.book-focus {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .book-base-plate {
+    display: none !important;
+  }
+
+ 
+  .book-leaf.is-flipped {
+    transform: translateX(-150%) rotate(-15deg) scale(0.7) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: transform 0.8s ease-in, opacity 0.5s ease-in !important;
+  }
+
+ 
+  .book-leaf.phone-active {
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 100 !important;
+  }
+
+
+  .leaf-side.back {
+    display: none !important;
+  }
+
+
+  .reset-btn {
+    background: var(--gold) !important;
+    width: 100%;
+    animation: fadeIn 0.5s ease;
+  }
+  .container-premium {
+    flex-direction: column-reverse;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 568px) {
+  :root {
+    --book-width: 280px;
+    --book-height: 380px;
+  }
+  .books-section-wrapper {
+    padding: 40px 15px;
+  }
+  .book-text-area h1 {
+    font-size: 2.2rem;
+  }
+  .summary-p {
+    font-size: 1rem;
+  }
+  .action-button {
+    width: auto;
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .book-leaf.is-flipped {
+    transform: rotateY(-105deg) scale(0.9);
+  }
+  .book-3d-canvas {
+    filter: drop-shadow(15px 15px 30px rgba(0, 0, 0, 0.1));
+  }
+  .book-3d-canvas {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .book-3d-canvas {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (hover: none) {
+  .action-button:hover {
+    transform: none;
+  }
+  .book-3d-canvas:hover {
+    transform: rotateX(5deg) rotateY(-5deg);
+  }
+}
+
+.leaf-side.back {
+  background: #000;
+  transform: rotateY(180deg);
+  border: none !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+.leaf-side.back .page-full-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.back-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  z-index: 5;
+  color: #fff;
+}
+
+.page-shadow-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, transparent 25%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.page-num-left {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}

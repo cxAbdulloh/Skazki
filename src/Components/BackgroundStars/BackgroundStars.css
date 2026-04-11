@@ -1,0 +1,24 @@
+.star {
+  position: fixed;
+  background: #c9963a;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px #c9963a;
+  will-change: transform, opacity;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.navbar,
+.hero-parallax,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+.parallax-item {
+  z-index: 1;
+}

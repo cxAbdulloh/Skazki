@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  overflow-x: hidden;
+}
