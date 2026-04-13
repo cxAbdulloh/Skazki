@@ -39,7 +39,7 @@ export const translations = {
     testi_3_text:
       "Obraz yaratishga yondashuv ajoyib. Kitob darhol oilaviy kutubxonamizdagi eng sevimli va qadrli kitobga aylandi.",
 
-      how_it_works_second: "Siz kitoblarni jonlantira olasiz✨",
+    how_it_works_second: "Siz kitoblarni jonlantira olasiz✨",
     how_it_works: "Bu qanday ishlaydi?",
     step_1_title: "QR-kodni skanerlang",
     step_1_text:
@@ -47,11 +47,32 @@ export const translations = {
     step_2_title: "Kamerani qarating",
     step_2_text: "Ochilgan havola orqali kamerani rasm ustiga qarating.",
     step_3_title: "Sehrni his eting",
-    step_3_text: "Tasvir bir zumda jonlanadi va ovozli videoga aylanadi!",
+    step_3_text: "Tasvir bir zumda jonlanadi!",
     qr_scan_try: "Sinab ko'rish uchun <br />skanerlang",
-    book_tap_magic: "Sehrni ko'rish uchun kitob ustiga bosing",
-    tap: "Bosish",
-    restart: "Boshidan boshlash"
+    book_tap_magic: "Sehrni ko'rish uchun skanerlang",
+    tap: "✨",
+    restart: "Boshidan boshlash",
+    soon: "Keyingi Kitob",
+    text: "Xotira kundaligi",
+    diary_summary: "Hayot — lahzalar to‘plamidir. Bu yerda eng qadrli xotiralar, shirin sog‘inchlar va yaqinlaringiz bilan bog‘liq lahzalar mangu muhrlanadi. Bu shunchaki kitob emas — bu sizning shaxsiy tarixingizdir.",
+    our_collections_title: "Bizning to'plamlar",
+
+
+
+    about_us_title: "Biz haqimizda",
+    about_description: "Biz har bir lahzani san'at asariga aylantiramiz. Bizning kitoblarimiz shunchaki qog'oz emas, bu sizning oilaviy tarixingiz va farzandingizning mo'jizaviy dunyosidir.",
+    about_description_2: "Toshkentdagi birinchi raqamli shaxsiylashtirilgan ertaklar studiyasi. Biz har bir lahzani san'at asariga aylantirib, farzandingiz uchun dunyoda yagona bo'lgan sehrli olamni yaratamiz. Bizning kitoblarimiz — shunchaki qog'oz emas, bu sizning oilaviy tarixingiz va poytaxtning premium darajadagi sifati uyg'unligidir.",
+    plus_1_title: "Individual yondashuv",
+    plus_1_desc: "Har bir ertak qahramoni farzandingizga 1:1 nisbatda o'xshash qilib yaratiladi.",
+    plus_2_title: "Premium sifat",
+    plus_2_desc: "Yillar davomida o'z ko'rinishini yo'qotmaydigan eng yuqori sifatli materiallar.",
+    plus_3_title: "Eko-do'stona",
+      plus_3_desc: "Bolalar uchun mutlaqo xavfsiz bo'lgan tabiatga zarar yetkazmaydigan bo'yoqlar.",
+    plus_4_title: "Tezkor yetkazib berish",
+    plus_4_desc: "Sizning mo'jizaviy buyurtmangizni qisqa muddatda eshigingiz tagiga yetkazamiz.",
+
+    more_info_text: "To'liq ma'lumot olish uchun"
+
   },
   ru: {
     // Navbar & Common
@@ -101,12 +122,36 @@ export const translations = {
     step_2_title: "Наведите камеру",
     step_2_text: "Наведите камеру на изображение через открывшуюся ссылку.",
     step_3_title: "Почувствуйте магию",
-    step_3_text:
-      "Изображение мгновенно оживает и превращается в видео со звуком!",
+    step_3_text: "Изображение мгновенно оживает!",
     qr_scan_try: "Отсканируй, чтобы <br />попробовать",
-    book_tap_magic: "Нажми на книгу, чтобы увидеть магию",
-    tap: "Нажми",
+    book_tap_magic: "Сканируй, чтобы увидеть магию",
+    tap: "✨",
 
-    restart: "Начат занова"
+    restart: "Начат занова",
+    soon: "Другая книга",
+    diary_summary: "Жизнь — это коллекция мгновений. Здесь вечно хранятся самые дорогие воспоминания, нежная ностальгия и моменты, связанные с близкими людьми. Это не просто книга, это ваша личная история.",
+    text: "Дневник памяти",
+    our_collections_title: "Наши коллекции",
+
+
+
+
+
+
+
+
+
+    about_us_title: "О нас",
+    about_description: "Мы превращаем каждое мгновение в произведение искусства. Наши книги — это не просто бумага, это ваша семейная история и волшебный мир вашего ребенка.",
+    about_description_2: "Ведущая студия персонализированных сказок в Ташкенте. Мы превращаем каждое мгновение в произведение искусства, создавая уникальный волшебный мир, где ваш ребенок — главный герой. Наши книги — это не просто бумага, это гармония вашей семейной истории и премиального качества исполнения в самом сердце столицы.",
+    plus_1_title: "Индивидуальный подход",
+    plus_1_desc: "Каждый герой сказки создается с портретным сходством вашего ребенка 1:1.",
+    plus_2_title: "Премиум качество",
+    plus_2_desc: "Высококачественные материалы, которые сохранят свой вид на долгие десятилетия.",
+    plus_3_title: "Эко-дружелюбность",
+    plus_3_desc: "Использование абсолютно безопасных и экологически чистых красок для детей.",
+    plus_4_title: "Быстрая доставка",
+    plus_4_desc: "Мы доставим ваш волшебный заказ прямо к вашей двери в кратчайшие сроки.",
+    more_info_text: "Для полной информации"
   },
 };

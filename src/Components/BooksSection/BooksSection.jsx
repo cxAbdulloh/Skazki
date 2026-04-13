@@ -14,46 +14,26 @@ const BooksSection = () => {
   const booksCollection = [
     {
       id: "book1",
+      title: "fotoskazki",
+      summary: t("books_summary"),
+      isComingSoon: false,
       pages: [
-        {
-          id: 1,
-
-          img: assets.book,
-          isCover: true,
-          backImg: assets.des_1,
-        },
-        {
-          id: 2,
-
-          img: assets.photo_1,
-          backImg: assets.des_1,
-        },
-        {
-          id: 3,
-
-          img: assets.photo_2,
-          backImg: assets.des_2,
-        },
-        {
-          id: 4,
-
-          img: assets.photo_3,
-          backImg: assets.des_3,
-        },
-        {
-          id: 5,
-
-          img: assets.photo_4,
-          backImg: assets.des_4,
-          backTitle: "The End",
-        },
+        { id: 1, img: assets.book, isCover: true, backImg: assets.des_1 },
+        { id: 2, img: assets.photo_1, backImg: assets.des_1 },
+        { id: 3, img: assets.photo_2, backImg: assets.des_2 },
+      ],
+    },
+    {
+      id: "book2",
+      title: t("text"),
+      summary: t("diary_summary"),
+      isComingSoon: true,
+      pages: [
+        { id: 1, img: assets.book, isCover: true, backImg: assets.des_3 },
+        { id: 2, img: assets.photo_3, backImg: assets.des_4 },
       ],
     },
   ];
-
-  const resetBook = () => {
-    setCurrentPage(0);
-  };
 
   const currentBook = booksCollection[activeBookIndex];
   const totalPages = currentBook.pages.length;
@@ -67,7 +47,7 @@ const BooksSection = () => {
   };
 
   const nextBook = () => {
-    if (isSwitching || booksCollection.length < 2) return;
+    if (isSwitching) return;
     setIsSwitching(true);
     setTimeout(() => {
       setActiveBookIndex((prev) => (prev + 1) % booksCollection.length);
@@ -78,6 +58,17 @@ const BooksSection = () => {
 
   return (
     <section className="books-section-wrapper">
+      <div className="section-header">
+        <h2 className="main-title-h1">
+
+
+          {t("our_collections_title")}
+    
+        </h2>
+
+
+        <div className="title-underline"></div>
+      </div>
       <div className="container-premium">
         <div
           className={`book-visual-area ${isHovered ? "book-focus" : ""} ${
@@ -91,7 +82,6 @@ const BooksSection = () => {
               {["uz", "ru", "en"].map((l) => (
                 <div key={l} className={`magic-bookmark ${l}`}>
                   <span className="bookmark-text">{l.toUpperCase()}</span>
-                  <div className="bookmark-glow"></div>
                 </div>
               ))}
             </div>
@@ -105,7 +95,6 @@ const BooksSection = () => {
                 style={{ zIndex: totalPages - index }}
                 onClick={handleFlip}
               >
-                {/* O'NG TOMON */}
                 <div className="leaf-side front">
                   {page.isCover ? (
                     <div className="book-cover-wrapper">
@@ -118,21 +107,14 @@ const BooksSection = () => {
                     </div>
                   ) : (
                     <div className="inner-page-design">
-                      <div className="page-text-overlay">
-                        <h3>{page.chapter}</h3>
-                        <p className="page-mini-desc">{page.title}</p>
-                      </div>
                       <img
                         src={page.img}
-                        alt={page.title}
+                        alt="page"
                         className="page-full-photo"
                       />
-                      <div className="page-shadow-overlay-right"></div>
                     </div>
                   )}
                 </div>
-
-                {/* CHAP TOMON (Telefonda yashiriladi) */}
                 <div className="leaf-side back">
                   <div className="inner-page-design">
                     <img
@@ -140,45 +122,38 @@ const BooksSection = () => {
                       alt="back"
                       className="page-full-photo"
                     />
-                    <div className="page-shadow-overlay"></div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Tugmalar qismi */}
           <div className="book-navigation">
-            {currentPage < totalPages ? (
-              <>
-                <button
-                  className="action-button"
-                  onClick={handleFlip}
-                  disabled={isFlying}
-                >
-                  {t("next_page")}
-                </button>
-                <button
-                  className="action-button next-book-btn"
-                  onClick={nextBook}
-                >
-                  Скоро...
-                </button>
-              </>
-            ) : (
-              <button className="action-button reset-btn" onClick={resetBook}>
-                {t("restart")}
-              </button>
-            )}
+            <button
+              className="action-button"
+              onClick={handleFlip}
+              disabled={isFlying || currentPage >= totalPages}
+            >
+              {currentPage < totalPages ? t("next_page") : t("restart")}
+            </button>
+
+            <button className="action-button next-book-btn" onClick={nextBook}>
+              {t("soon")}
+            </button>
           </div>
         </div>
 
+        {/* Matn qismi */}
         <div className={`book-text-area ${isHovered ? "text-fade" : ""}`}>
           <h1>
-            fotoskazki<span className="book-span">.</span>
+            {currentBook.title}
+            <span className="book-span">.</span>
           </h1>
-          <p className="summary-p">{t("books_summary")}</p>
+          <p className="summary-p">{currentBook.summary}</p>
         </div>
       </div>
+
     </section>
   );
 };

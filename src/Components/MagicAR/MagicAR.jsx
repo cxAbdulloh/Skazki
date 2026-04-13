@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
@@ -9,12 +9,10 @@ import { useLanguage } from "../../LanguageContext";
 gsap.registerPlugin(ScrollTrigger, Flip);
 
 const MagicAR = () => {
+
   const containerRef = useRef(null);
-  const modalRef = useRef(null);
-  const modalImageRef = useRef(null);
   const { t } = useLanguage();
 
-  const [isBookZoomed, setIsBookZoomed] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -64,45 +62,7 @@ const MagicAR = () => {
     return () => ctx.revert();
   }, []);
 
-  const toggleBookZoom = (e) => {
-    const clickedImage = e.target;
-    const modal = modalRef.current;
-    const modalImage = modalImageRef.current;
-
-    if (!isBookZoomed) {
-      const state = Flip.getState(clickedImage);
-      modalImage.src = clickedImage.src;
-      modal.style.display = "flex";
-
-      Flip.from(state, {
-        duration: 0.8,
-        ease: "power4.inOut",
-        scale: true,
-        onComplete: () => setIsBookZoomed(true),
-      });
-
-      gsap.to(modal, {
-        backgroundColor: "rgba(0,0,0,0.9)",
-        backdropFilter: "blur(15px)",
-        duration: 0.5,
-      });
-    }
-  };
-
-  const closeZoom = () => {
-    if (isBookZoomed) {
-      const modal = modalRef.current;
-      gsap.to(modal, {
-        backgroundColor: "rgba(0,0,0,0)",
-        backdropFilter: "blur(0px)",
-        duration: 0.5,
-        onComplete: () => {
-          modal.style.display = "none";
-          setIsBookZoomed(false);
-        },
-      });
-    }
-  };
+  
 
   return (
     <section className="roadmap-section" ref={containerRef}>

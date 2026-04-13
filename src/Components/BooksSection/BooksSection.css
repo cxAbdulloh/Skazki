@@ -20,6 +20,7 @@
   gap: 100px;
   max-width: 1200px;
   width: 100%;
+  margin-top: 45px;
 }
 
 @media (max-width: 968px) {
@@ -323,6 +324,7 @@
   margin-bottom: 20px;
   letter-spacing: 3px;
   color: var(--forest);
+  line-height: 1;
 }
 
 .book-span {
@@ -570,3 +572,112 @@
   z-index: 10;
   backdrop-filter: blur(4px);
 }
+/* Bulutcha effekti (Skoro...) */
+.coming-soon-cloud {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #fff;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  animation: floatCloud 3s ease-in-out infinite;
+  border: 1px solid var(--gold);
+}
+
+.coming-soon-cloud span {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Bulutcha dumaloqchalari uchun */
+.coming-soon-cloud::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+}
+
+@keyframes floatCloud {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Badge stili tugma ichida */
+.soon-badge {
+  font-size: 10px;
+  background: var(--gold);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+/* Matn o'zgarganda animatsiya */
+.book-text-area h1 {
+  transition: all 0.5s ease;
+  text-transform: lowercase;
+}
+
+
+@media (max-width: 768px) {
+  .book-text-area h1 {
+    font-size: 2.5rem;
+  }
+  .coming-soon-cloud {
+    transform: scale(0.8);
+  }
+}
+/* Asosiy konteyner */
+.books-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+}
+
+
+.section-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+
+.main-title-h1 {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 5px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+
+.title-underline {
+  width: 80px;
+  height: 2px;
+  background: #c9973a6b;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .main-title-h1 {
+    font-size: 2rem;
+    gap: 10px; 
+  }
+}
+

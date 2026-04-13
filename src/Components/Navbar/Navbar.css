@@ -170,9 +170,9 @@
   justify-content: space-between;
   padding: 140px 10% 80px;
   gap: 60px;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .text-content {
