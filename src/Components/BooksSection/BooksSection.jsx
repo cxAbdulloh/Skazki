@@ -21,6 +21,8 @@ const BooksSection = () => {
         { id: 1, img: assets.book, isCover: true, backImg: assets.des_1 },
         { id: 2, img: assets.photo_1, backImg: assets.des_1 },
         { id: 3, img: assets.photo_2, backImg: assets.des_2 },
+        { id: 4, img: assets.photo_3, backImg: assets.des_3},
+        { id: 4, img: assets.photo_4, backImg: assets.des_4},
       ],
     },
     {
@@ -39,11 +41,20 @@ const BooksSection = () => {
   const totalPages = currentBook.pages.length;
 
   const handleFlip = () => {
-    if (currentPage < totalPages && !isFlying) {
+    if (isFlying) return;
+
+    // Agar sahifalar tugagan bo'lsa, boshiga qaytaramiz
+    if (currentPage >= totalPages) {
       setIsFlying(true);
-      setCurrentPage((prev) => prev + 1);
+      setCurrentPage(0);
       setTimeout(() => setIsFlying(false), 1200);
+      return;
     }
+
+    // Odatiy varaqlash
+    setIsFlying(true);
+    setCurrentPage((prev) => prev + 1);
+    setTimeout(() => setIsFlying(false), 1200);
   };
 
   const nextBook = () => {
@@ -59,13 +70,7 @@ const BooksSection = () => {
   return (
     <section className="books-section-wrapper">
       <div className="section-header">
-        <h2 className="main-title-h1">
-
-
-          {t("our_collections_title")}
-    
-        </h2>
-
+        <h2 className="main-title-h1">{t("our_collections_title")}</h2>
 
         <div className="title-underline"></div>
       </div>
@@ -133,7 +138,7 @@ const BooksSection = () => {
             <button
               className="action-button"
               onClick={handleFlip}
-              disabled={isFlying || currentPage >= totalPages}
+              disabled={isFlying} // Faqat animatsiya ketayotgan paytda bloklanadi
             >
               {currentPage < totalPages ? t("next_page") : t("restart")}
             </button>
@@ -153,7 +158,6 @@ const BooksSection = () => {
           <p className="summary-p">{currentBook.summary}</p>
         </div>
       </div>
-
     </section>
   );
 };
