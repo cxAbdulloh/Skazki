@@ -43,7 +43,7 @@ const BooksSection = () => {
   const handleFlip = () => {
     if (isFlying) return;
 
-    // Agar sahifalar tugagan bo'lsa, boshiga qaytaramiz
+
     if (currentPage >= totalPages) {
       setIsFlying(true);
       setCurrentPage(0);

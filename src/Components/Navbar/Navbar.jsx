@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useLanguage } from "../../LanguageContext";
 import "./Navbar.css";
-import { assets } from "../../assets/assets";
+// import { assets } from "../../assets/assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const Navbar = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -14,73 +16,82 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  useEffect(() => {
-    const stars = [];
-    const count = window.innerWidth < 768 ? 35 : 70;
+  // useEffect(() => {
+  //   const stars = [];
+  //   const count = window.innerWidth < 768 ? 35 : 70;
 
-    const createStars = () => {
-      for (let i = 0; i < count; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        const size = Math.random() * 3 + 1;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        document.body.appendChild(star);
-        stars.push(star);
+  //   const createStars = () => {
+  //     for (let i = 0; i < count; i++) {
+  //       const star = document.createElement("div");
+  //       star.className = "star";
+  //       const size = Math.random() * 3 + 1;
+  //       star.style.width = `${size}px`;
+  //       star.style.height = `${size}px`;
+  //       star.style.left = `${Math.random() * 100}vw`;
+  //       star.style.top = `${Math.random() * 100}vh`;
+  //       document.body.appendChild(star);
+  //       stars.push(star);
 
-        gsap.to(star, {
-          opacity: Math.random() * 0.7 + 0.2,
-          duration: Math.random() * 2 + 1,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
+  //       gsap.to(star, {
+  //         opacity: Math.random() * 0.7 + 0.2,
+  //         duration: Math.random() * 2 + 1,
+  //         repeat: -1,
+  //         yoyo: true,
+  //         ease: "sine.inOut",
+  //       });
 
-        const moveStar = (el) => {
-          gsap.to(el, {
-            x: (Math.random() - 0.5) * 120,
-            y: (Math.random() - 0.5) * 120,
-            duration: Math.random() * 6 + 4,
-            ease: "sine.inOut",
-            onComplete: () => moveStar(el),
-          });
-        };
-        moveStar(star);
-      }
-    };
+  //       const moveStar = (el) => {
+  //         gsap.to(el, {
+  //           x: (Math.random() - 0.5) * 120,
+  //           y: (Math.random() - 0.5) * 120,
+  //           duration: Math.random() * 6 + 4,
+  //           ease: "sine.inOut",
+  //           onComplete: () => moveStar(el),
+  //         });
+  //       };
+  //       moveStar(star);
+  //     }
+  //   };
 
-    createStars();
+  //   createStars();
 
-    const ctx = gsap.context(() => {
-      gsap.from(".animate-text", {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-      });
-      gsap.from(imageRef.current, {
-        x: 100,
-        opacity: 0,
-        duration: 1.2,
-        delay: 0.5,
-        ease: "power3.out",
-      });
-    });
+  //   const ctx = gsap.context(() => {
+  //     gsap.from(".animate-text", {
+  //       x: -100,
+  //       opacity: 0,
+  //       duration: 1,
+  //       stagger: 0.3,
+  //       ease: "power3.out",
+  //     });
+  //     gsap.from(imageRef.current, {
+  //       x: 100,
+  //       opacity: 0,
+  //       duration: 1.2,
+  //       delay: 0.5,
+  //       ease: "power3.out",
+  //     });
+  //   });
 
-    return () => {
-      ctx.revert();
-      stars.forEach((s) => s.remove());
-    };
-  }, [lang]);
+  //   return () => {
+  //     ctx.revert();
+
+  //   };
+  // }, [lang]);
 
   return (
     <div className="page-wrapper">
       <nav className="navbar">
-        <div className="logo">
+        <Link to={"/"} className="logo">
           fotoskazki<span className="nav-span">.</span>
+        </Link>
+
+        <div className="nav-center-link">
+          <a href="#about" className="nav-link">
+            {t("about_us")}
+          </a>
+          <Link to={"/collection"} href="" className="nav-link-second">
+            Коллекция
+          </Link>
         </div>
 
         <div className="nav-controls-wrapper">
@@ -140,23 +151,21 @@ const Navbar = () => {
           </div>
 
           <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
-          <div id="social-links-mobile">
+            <div id="social-links-mobile">
               <a
-                href="https://www.instagram.com/fotoskazki.uz/"
-                target="_blank"
-                rel="noreferrer"
-                className="social-icon"
+                href="#about"
+                className="nav-link-mobile"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <FontAwesomeIcon icon={faInstagram} /><span>Instagram</span>
+                {t("about_us")}
               </a>
-              <a
-                href="https://t.me/fotoskaz_bot"
-                target="_blank"
-                rel="noreferrer"
-                className="social-icon"
+              <Link to={"/collection"}
+                href="#collection"
+                className="nav-link-mobile"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <FontAwesomeIcon icon={faTelegram} /><span>Telegram</span>
-              </a>
+                {t("collection")}
+              </Link>
             </div>
             <a
               href="tel:+998919767600"

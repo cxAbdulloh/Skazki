@@ -1,11 +1,19 @@
 .star {
   position: fixed;
-  background: #c9963a;
-  border-radius: 50%;
+  background: #c9963a; /* Sizning gold rangingiz */
+  /* To'rt qirrali yulduz shakli */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   pointer-events: none;
-  box-shadow: 0 0 10px #c9963a;
+  /* Yaltirash effekti */
+  box-shadow: 0 0 15px rgba(201, 150, 58, 0.8);
   will-change: transform, opacity;
+  z-index: 1;
 }
+
+/* Yana ham chiroyli chiqishi uchun ba'zi yulduzlarga blur beramiz */
+.star:nth-child(odd) {
+  filter: blur(0.5px);
+}  
 
 .App {
   position: relative;

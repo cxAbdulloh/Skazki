@@ -7,6 +7,8 @@ footer {
   position: relative;
   z-index: 20;
   flex-wrap: wrap;
+  border-top: 1px solid #7a6a5015;
+  margin-top: 50px;
 }
 
 .social-icons {
@@ -18,3 +20,4 @@ footer {
   margin-left: 10px;
   transition: 0.3s;
 }
+

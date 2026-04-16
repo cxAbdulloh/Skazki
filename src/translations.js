@@ -17,7 +17,7 @@ export const translations = {
     books_summary:
       "Biz bolaning yuz xususiyatlarini 1:1 saqlagan holda sehrli hikoyalar yaratamiz. Syujet uning qiziqishlari, orzulari va sevimli qahramonlari atrofida quriladi. Bu shunchaki kitob emas — bu butun umrga tatigulik xotira.",
     premium_ai: "Premium AI ishlanmasi.",
-    next_page: "Keyingisi ✨",
+    next_page: "Keyingisi ✦",
     finish: "Tamom ✨",
 
     // Book Pages (Ertak sahifalari)
@@ -57,8 +57,8 @@ export const translations = {
     diary_summary: "Hayot — lahzalar to‘plamidir. Bu yerda eng qadrli xotiralar, shirin sog‘inchlar va yaqinlaringiz bilan bog‘liq lahzalar mangu muhrlanadi. Bu shunchaki kitob emas — bu sizning shaxsiy tarixingizdir.",
     our_collections_title: "Bizning to'plamlar",
 
-
-
+    collection: "Kolleksiya",
+    about_us: "Biz haqimizda",
     about_us_title: "Biz haqimizda",
     about_description: "Biz har bir lahzani san'at asariga aylantiramiz. Bizning kitoblarimiz shunchaki qog'oz emas, bu sizning oilaviy tarixingiz va farzandingizning mo'jizaviy dunyosidir.",
     about_description_2: "Toshkentdagi birinchi raqamli shaxsiylashtirilgan ertaklar studiyasi. Biz har bir lahzani san'at asariga aylantirib, farzandingiz uchun dunyoda yagona bo'lgan sehrli olamni yaratamiz. Bizning kitoblarimiz — shunchaki qog'oz emas, bu sizning oilaviy tarixingiz va poytaxtning premium darajadagi sifati uyg'unligidir.",
@@ -71,7 +71,9 @@ export const translations = {
     plus_4_title: "Tezkor yetkazib berish",
     plus_4_desc: "Sizning mo'jizaviy buyurtmangizni qisqa muddatda eshigingiz tagiga yetkazamiz.",
 
-    more_info_text: "To'liq ma'lumot olish uchun"
+    more_info_text: "To'liq ma'lumot olish uchun",
+    main_title: "Ertaklar.",
+    bottom_text: "3 xil variant mavjud",
 
   },
   ru: {
@@ -92,7 +94,7 @@ export const translations = {
     books_summary:
       "Мы создаём волшебные истории, где сохраняются все черты лица ребёнка 1:1, а сюжет строится вокруг его интересов, мечт и любимых героев. Это не просто книга — это память, которая остаётся с ребёнком на всю жизнь.",
     premium_ai: "Premium AI Artwork.",
-    next_page: "Следующий ✨",
+    next_page: "Следующий ✦",
     finish: "Конец ✨",
 
     // Book Pages
@@ -127,7 +129,7 @@ export const translations = {
     book_tap_magic: "Сканируй, чтобы увидеть магию",
     tap: "✨",
 
-    restart: "Начат занова",
+    restart: "Начат заново",
     soon: "Другая книга",
     diary_summary: "Жизнь — это коллекция мгновений. Здесь вечно хранятся самые дорогие воспоминания, нежная ностальгия и моменты, связанные с близкими людьми. Это не просто книга, это ваша личная история.",
     text: "Дневник памяти",
@@ -135,12 +137,12 @@ export const translations = {
 
 
 
+    bottom_text: "Доступно 3 варианта",
 
 
+    collection: "Коллекция",
 
-
-
-
+    about_us: "О нас",
     about_us_title: "О нас",
     about_description: "Мы превращаем каждое мгновение в произведение искусства. Наши книги — это не просто бумага, это ваша семейная история и волшебный мир вашего ребенка.",
     about_description_2: "Ведущая студия персонализированных сказок в Ташкенте. Мы превращаем каждое мгновение в произведение искусства, создавая уникальный волшебный мир, где ваш ребенок — главный герой. Наши книги — это не просто бумага, это гармония вашей семейной истории и премиального качества исполнения в самом сердце столицы.",
@@ -152,6 +154,7 @@ export const translations = {
     plus_3_desc: "Использование абсолютно безопасных и экологически чистых красок для детей.",
     plus_4_title: "Быстрая доставка",
     plus_4_desc: "Мы доставим ваш волшебный заказ прямо к вашей двери в кратчайшие сроки.",
-    more_info_text: "Для полной информации"
+    more_info_text: "Для полной информации",
+    main_title: "Сказки."
   },
 };

@@ -6,6 +6,7 @@ import photo_2 from "./photo_2.png"
 import photo_3 from "./photo_3.png"
 import photo_4 from "./photo_4.png"
 import photo_5 from "./photo_5.png"
+import photo_6 from "./photo_6.png"
 
 import des_1 from "./des_1.png"
 import des_2 from "./des_2.png"
@@ -25,6 +26,7 @@ export const assets = {
     photo_3,
     photo_4,
     photo_5,
+    photo_6,
 
     des_1,
     des_2,
