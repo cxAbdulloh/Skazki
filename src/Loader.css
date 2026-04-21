@@ -64,12 +64,12 @@
 }
 
 .percentage {
-  color: #c9963a; /* Siz tanlagan tillarang */
-  font-family: 'Georgia', serif; /* Ertaknamo shrift (Georgia ishlatildi) */
+  color: #c9963a; 
+  font-family: 'Georgia', serif; 
   font-size: 20px;
   font-weight: 500;
   margin-top: -30px;
   letter-spacing: 2px;
-  /* % raqamiga ham mayin glow beramiz */
   text-shadow: 0 0 10px rgba(201, 150, 58, 0.4); 
+  font-family: "Trebuchet MS", sans-serif;
 }
