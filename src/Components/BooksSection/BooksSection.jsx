@@ -61,7 +61,7 @@ const BooksSection = () => {
       summary: t("diary_summary"),
       path: "/memory",
       isComingSoon: false,
-      pages: [{ id: 1, img: assets.book, isCover: true }],
+      pages: [{ id: 1, img: assets.book_2, isCover: true }],
     },
   ];
 

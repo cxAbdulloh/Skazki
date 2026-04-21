@@ -1,4 +1,5 @@
 import book from "./book.png"
+import book_2 from "./book_2.png"
 import cloud from "./cloud.png"
 
 
@@ -21,6 +22,7 @@ import unicorn from "./unicorn.png"
 
 export const assets = {
     book,
+    book_2,
 
     photo_1,
     photo_2,
