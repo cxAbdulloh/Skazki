@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import "./Collection.css";
 import { assets } from "../assets/assets";
 import Footer from "../Components/Footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 
 const Collection = () => {
   const { t } = useLanguage();
@@ -46,7 +48,7 @@ const Collection = () => {
 
   return (
     <div className="page-wrapper">
-      <nav className="navbar">
+      <nav className="navbar-nav">
         <Link to="/" className="logo">
           fotoskazki<span className="nav-span">.</span>
         </Link>
@@ -108,22 +110,27 @@ const Collection = () => {
           </div>
 
           <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
-            <div id="social-links-mobile">
+          <div id="social-links-mobile">
               <a
-                href="#about"
-                className="nav-link-mobile"
-                onClick={() => setIsMenuOpen(false)}
+                href="https://t.me/fotoskaz_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-item"
               >
-                {t("about_us")}
+                <FontAwesomeIcon icon={faTelegram} />
+                <span>Telegram</span>
               </a>
-              <Link
-                to={"/collection"}
-                href="#collection"
-                className="nav-link-mobile"
-                onClick={() => setIsMenuOpen(false)}
+
+              {/* Instagram Link */}
+              <a
+                href="https://www.instagram.com/fotoskazki.uz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-item"
               >
-                {t("collection")}
-              </Link>
+                <FontAwesomeIcon icon={faInstagram} />
+                <span>Instagram</span>
+              </a>
             </div>
             <a
               href="tel:+998919767600"

@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useLanguage } from "../../LanguageContext";
 import "./Navbar.css";
-// import { assets } from "../../assets/assets";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
@@ -149,8 +150,26 @@ const Navbar = () => {
 
           <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
             <div id="social-links-mobile">
-              
-          
+              <a
+                href="https://t.me/fotoskaz_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-item"
+              >
+                <FontAwesomeIcon icon={faTelegram} />
+                <span>Telegram</span>
+              </a>
+
+              {/* Instagram Link */}
+              <a
+                href="https://www.instagram.com/fotoskazki.uz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-item"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+                <span>Instagram</span>
+              </a>
             </div>
             <a
               href="tel:+998919767600"

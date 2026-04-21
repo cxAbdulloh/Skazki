@@ -1,0 +1,11 @@
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    z-index: 1100;
+    transition: background 0.3s ease;
+    background: #fdf6ec;
+    border-bottom: 1px solid #7a6a5015;
+  }
