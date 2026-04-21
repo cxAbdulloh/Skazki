@@ -305,7 +305,48 @@
   border-left: 12px solid #234730;
   box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
 }
-
+.books-summary-bottom, .books-button-container, .books-button-bottom{
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.books-summary-bottom.text-fade {
+  opacity: 0.2;
+  transform: translateX(-30px);
+  pointer-events: none;
+}
+.books-summary-bottom {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
+.books-button-container.text-fade {
+  opacity: 0.2;
+  transform: translateX(-30px);
+  pointer-events: none;
+}
+.books-button-bottom.text-fade {
+  opacity: 0.2;
+  transform: translateX(-30px);
+  pointer-events: none;
+}
+.books-button-bottom {
+  cursor: pointer;
+  border-radius: 30px;
+  color: #c9963a;
+  background-color: transparent;
+  border: 2px solid #c9963a;
+  font-size: 16px;
+  padding: 13px 100px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.books-button-bottom a {
+  color: #c9963a;
+}
+@media (max-width: 568px) {
+  .books-button-bottom {
+    padding: 13px 80px;
+  }
+}
 .book-text-area {
   flex: 1;
   max-width: 500px;
@@ -335,7 +376,6 @@
   color: #7a6a50;
   line-height: 1.6;
 }
-
 
 .book-navigation {
   display: flex;
@@ -427,12 +467,10 @@
 }
 
 @media (max-width: 768px) {
-
   .book-base-plate {
     display: none !important;
   }
 
- 
   .book-leaf.is-flipped {
     transform: translateX(-150%) rotate(-15deg) scale(0.7) !important;
     opacity: 0 !important;
@@ -440,18 +478,15 @@
     transition: transform 0.8s ease-in, opacity 0.5s ease-in !important;
   }
 
- 
   .book-leaf.phone-active {
     opacity: 1 !important;
     transform: none !important;
     z-index: 100 !important;
   }
 
-
   .leaf-side.back {
     display: none !important;
   }
-
 
   .reset-btn {
     background: var(--gold) !important;
@@ -459,7 +494,7 @@
     animation: fadeIn 0.5s ease;
   }
   .container-premium {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 
@@ -580,7 +615,7 @@
   background: #fff;
   border-radius: 50px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   animation: floatCloud 3s ease-in-out infinite;
   border: 1px solid var(--gold);
 }
@@ -593,7 +628,7 @@
 
 /* Bulutcha dumaloqchalari uchun */
 .coming-soon-cloud::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 20px;
@@ -605,8 +640,13 @@
 }
 
 @keyframes floatCloud {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Badge stili tugma ichida */
@@ -623,9 +663,7 @@
 /* Matn o'zgarganda animatsiya */
 .book-text-area h1 {
   transition: all 0.5s ease;
-  text-transform: lowercase;
 }
-
 
 @media (max-width: 768px) {
   .book-text-area h1 {
@@ -643,7 +681,6 @@
   padding: 80px 0;
 }
 
-
 .section-header {
   width: 100%;
   text-align: center;
@@ -654,18 +691,16 @@
   gap: 13px;
 }
 
-
 .main-title-h1 {
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   font-size: 2.5rem;
   font-weight: 800;
   margin: 0;
   letter-spacing: 3px;
 }
-
 
 .title-underline {
   width: 80px;
@@ -677,7 +712,54 @@
 @media (max-width: 768px) {
   .main-title-h1 {
     font-size: 2rem;
-    gap: 10px; 
+    gap: 10px;
   }
 }
 
+.books-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 25px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(201, 151, 58, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.books-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #c9973a;
+  box-shadow: 0 15px 30px rgba(201, 151, 58, 0.1);
+}
+
+.books-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.books-card h3 {
+  font-size: 1rem;
+  color: #1a3a3a;
+  margin-bottom: 8px;
+}
+
+.books-card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.next-book-btn a {
+  color: #c9963a;
+}
+
+.next-book-btn a:hover {
+  color: #fff;
+}
+
+.visual-text {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}

@@ -1,4 +1,5 @@
 import book from "./book.png"
+import cloud from "./cloud.png"
 
 
 import photo_1 from "./photo_1.png"
@@ -36,4 +37,5 @@ export const assets = {
     qr_code,
 
     unicorn,
+    cloud
 }

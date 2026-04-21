@@ -85,14 +85,11 @@ const Navbar = () => {
           fotoskazki<span className="nav-span">.</span>
         </Link>
 
-        <div className="nav-center-link">
+        {/* <div className="nav-center-link">
           <a href="#about" className="nav-link">
             {t("about_us")}
           </a>
-          <Link to={"/collection"} href="" className="nav-link-second">
-            Коллекция
-          </Link>
-        </div>
+        </div> */}
 
         <div className="nav-controls-wrapper">
           <div className="lang-dropdown-container">
@@ -152,20 +149,8 @@ const Navbar = () => {
 
           <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
             <div id="social-links-mobile">
-              <a
-                href="#about"
-                className="nav-link-mobile"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("about_us")}
-              </a>
-              <Link to={"/collection"}
-                href="#collection"
-                className="nav-link-mobile"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("collection")}
-              </Link>
+              
+          
             </div>
             <a
               href="tel:+998919767600"

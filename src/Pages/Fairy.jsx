@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useLanguage } from "../LanguageContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Collection.css";
+import "./Fairy.css";
 import { assets } from "../assets/assets";
 import Footer from "../Components/Footer/Footer";
 
-const Collection = () => {
+const Fairy = () => {
   const { t } = useLanguage();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -151,7 +151,7 @@ const Collection = () => {
 
         <div className="column books-text-column">
           <div className="books-text-content">
-            <h1 className="books-main-title">{t("text")}</h1>
+            <h1 className="books-main-title">{t("main_title")}</h1>
           </div>
           <div className="legacy-section">
             <div className="accordion-container">
@@ -164,14 +164,14 @@ const Collection = () => {
                   onClick={() => toggleAccordion(item)} // Butun band bosilganda ochiladi
                 >
                   <div className="accordion-header">
-                    <h2>{t(`title_${item}`)}</h2>
+                    <h2>{t(`second_title_${item}`)}</h2>
                     <span className="accordion-icon">
                       {openIndices.includes(item) ? "−" : "+"}
                     </span>
                   </div>
 
                   <div className="accordion-content">
-                    <p className="description">{t(`desc_${item}`)}</p>
+                    <p className="description">{t(`second_desc_${item}`)}</p>
                   </div>
                 </div>
               ))}
@@ -185,4 +185,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default Fairy;
