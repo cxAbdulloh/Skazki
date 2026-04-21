@@ -44,6 +44,9 @@
 .accordion-button a {
   color: #fff;
 }
+.second-accordion-button a {
+  color: #fff;
+}
 /* Matn ustuni */
 .books-text-column {
   flex: 1;
@@ -91,7 +94,27 @@
 .accordion-button {
   cursor: pointer;
   background-color: #000;
-  color: #fff;
+  border-radius: 30px;
+  font-size: 16px;
+  max-width: max-content;
+  padding: 14px 80px;
+  margin-top: 25px;
+  transition: 0.3s ease;
+  border: none;
+  font-family: "Trebuchet MS", sans-serif;
+}
+.second-accordion-button a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.second-accordion-button span {
+  letter-spacing: 1px;
+  font-family: "Trebuchet MS", sans-serif;
+}
+.second-accordion-button {
+  cursor: pointer;
+  background-color: #2d5a3d;
   border-radius: 30px;
   font-size: 16px;
   max-width: max-content;
@@ -100,7 +123,13 @@
   transition: 0.3s ease;
   border: none;
 }
-
+.bottom-button-containers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%; /* To'liq kenglik egallashi uchun */
+}
 .accordion-button:hover {
   transform: translateY(-3px);
   background-color: #c9963a;
@@ -138,12 +167,32 @@
     font-size: 2.5rem;
   }
 } */
-@media (max-width: 568px) {
-  .accordion-button {
+ @media (max-width: 599px) {
+  .second-accordion-button {
     max-width: none;
+    margin-top: -5px;
   }
-  .books-main-title {
-    font-size: 2.3rem;
+ }
+ @media (max-width: 568px) {
+  .bottom-button-containers {
+    flex-direction: column; /* Tugmalarni ustma-ust qo'yish */
+    align-items: center;
+    width: 100%;
+  }
+
+  .accordion-button, 
+  .second-accordion-button {
+    max-width: 100% !important; /* Max-content'ni bekor qilish */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Ichidagi matnni markazlash */
+    align-items: center;
+    padding: 14px 0; /* Yonlardagi paddingni olib tashlab, faqat balandlik qoldirish */
+  }
+
+  .second-accordion-button a {
+    justify-content: center;
+    width: 100%;
   }
 }
 /* @media (max-width: 768px) {
