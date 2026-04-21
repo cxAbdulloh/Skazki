@@ -12,34 +12,6 @@ const BooksSection = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isSwitching, setIsSwitching] = useState(false);
 
-  const fadeInVariant = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
   const booksCollection = [
     {
       id: "book1",
@@ -52,11 +24,11 @@ const BooksSection = () => {
         { id: 2, img: assets.photo_1, backImg: assets.des_1 },
         { id: 3, img: assets.photo_2, backImg: assets.des_2 },
         { id: 4, img: assets.photo_3, backImg: assets.des_3 },
-        { id: 4, img: assets.photo_4, backImg: assets.des_4 },
+        { id: 5, img: assets.photo_4, backImg: assets.des_4 },
       ],
     },
     {
-      id: "book1",
+      id: "book2",
       text: t("text"),
       summary: t("diary_summary"),
       path: "/memory",
@@ -70,15 +42,12 @@ const BooksSection = () => {
 
   const handleFlip = () => {
     if (isFlying) return;
-
     if (currentPage >= totalPages) {
       setIsFlying(true);
       setCurrentPage(0);
       setTimeout(() => setIsFlying(false), 1200);
       return;
     }
-
-    // Odatiy varaqlash
     setIsFlying(true);
     setCurrentPage((prev) => prev + 1);
     setTimeout(() => setIsFlying(false), 1200);
@@ -120,7 +89,7 @@ const BooksSection = () => {
 
             {currentBook.pages.map((page, index) => (
               <div
-                key={`${currentBook.id}-${page.id}`}
+                key={`${currentBook.id}-${page.id}-${index}`}
                 className={`book-leaf ${
                   index < currentPage ? "is-flipped" : ""
                 } ${index === currentPage ? "active-leaf" : ""}`}
@@ -130,20 +99,12 @@ const BooksSection = () => {
                 <div className="leaf-side front">
                   {page.isCover ? (
                     <div className="book-cover-wrapper">
-                      <img
-                        src={page.img}
-                        alt="Cover"
-                        className="main-cover-img"
-                      />
+                      <img src={page.img} alt="Cover" className="main-cover-img" />
                       <div className="spine-shadow"></div>
                     </div>
                   ) : (
                     <div className="inner-page-design">
-                      <img
-                        src={page.img}
-                        alt="page"
-                        className="page-full-photo"
-                      />
+                      <img src={page.img} alt="page" className="page-full-photo" />
                     </div>
                   )}
                 </div>
@@ -165,6 +126,7 @@ const BooksSection = () => {
               className="action-button"
               onClick={handleFlip}
               disabled={isFlying}
+              style={{ display: activeBookIndex === 1 ? "none" : "block" }} // IKINCHI KITOBDA DISPLAY NONE
             >
               {currentPage < totalPages ? t("next_page") : t("restart")}
             </button>
@@ -173,6 +135,7 @@ const BooksSection = () => {
             </button>
           </div>
         </div>
+
         <div className="hhh">
           <div className={`book-text-area ${isHovered ? "text-fade" : ""}`}>
             <h1>
@@ -184,29 +147,7 @@ const BooksSection = () => {
           <p className={`books-summary-bottom ${isHovered ? "text-fade" : ""}`}>
             {t("bottom_text")}
           </p>
-          {/* <div
-            className={`books-button-container ${isHovered ? "text-fade" : ""}`}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-
-          >
-            <button variants={itemVariants} className="books-button"> 
-              O'zbekcha
-            </button>
-            <button variants={itemVariants} className="books-button">
-              Русский
-            </button>
-            <button variants={itemVariants} className="books-button">
-              English
-            </button>
-          </div>   */}
-          {/* <button className={`books-button-bottom ${isHovered ? "text-fade" : ""}`}><Link to={"/collection"}>{t("about_book")}</Link></button> */}
-          <button
-            className={`books-button-bottom ${isHovered ? "text-fade" : ""}`}
-          >
-            {/* Bu yerda statik "/collection" o'rniga dinamik currentBook.path ishlatamiz */}
+          <button className={`books-button-bottom ${isHovered ? "text-fade" : ""}`}>
             <Link to={currentBook.path}>{t("about_book")}</Link>
           </button>
         </div>
