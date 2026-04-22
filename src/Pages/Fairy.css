@@ -40,6 +40,9 @@
     .container-premium-book {
         flex-direction: column;
     }
+    .hhh {
+        display: none;
+    }
 }
 
 
