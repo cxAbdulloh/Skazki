@@ -27,11 +27,11 @@ const App = () => {
         ) : (
           <div className="app-main-wrapper">
             {/* Sehrli yulduzchalar foni */}
-            <div className="magic-stars-overlay">
+            {/* <div className="magic-stars-overlay">
               {[...Array(40)].map((_, i) => (
                 <div key={i} className="magic-star"></div>
               ))}
-            </div>
+            </div> */}
 
             <Router>
               <Routes>

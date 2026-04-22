@@ -8,13 +8,46 @@ import Footer from "../Components/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 
+
 const Collection = () => {
   const { t } = useLanguage();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { lang, setLang } = useLanguage();
+  const [activeBookIndex, setActiveBookIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isFlying, setIsFlying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isSwitching, setIsSwitching] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+
+  
+
+  const booksCollection = [
+    {
+      id: "book2",
+      text: t("text"),
+      summary: t("diary_summary"),
+      path: "/memory",
+      isComingSoon: false,
+      pages: [{ id: 1, img: assets.book_2, isCover: true }],
+    },
+  ];
+  
+  const handleFlip = () => {
+    if (isFlying) return;
+    if (currentPage >= totalPages) {
+      setIsFlying(true);
+      setCurrentPage(0);
+      setTimeout(() => setIsFlying(false), 1200);
+      return;
+    }
+    setIsFlying(true);
+    setCurrentPage((prev) => prev + 1);
+    setTimeout(() => setIsFlying(false), 1200);
+  };
 
   const fadeInVariant = {
     hidden: { opacity: 0, x: -100 }, // Chapda va ko'rinmas
@@ -34,17 +67,19 @@ const Collection = () => {
     }),
   };
 
-  // State-ni massiv qilib o'zgartiramiz
   const [openIndices, setOpenIndices] = useState([]);
 
   const toggleAccordion = (index) => {
     setOpenIndices(
       (prevIndices) =>
         prevIndices.includes(index)
-          ? prevIndices.filter((i) => i !== index) // Agar ochiq bo'lsa, yopish (massivdan o'chirish)
-          : [...prevIndices, index] // Agar yopiq bo'lsa, ochish (massivga qo'shish)
+          ? prevIndices.filter((i) => i !== index) 
+          : [...prevIndices, index] 
     );
   };
+
+  const currentBook = booksCollection[activeBookIndex];
+  const totalPages = currentBook.pages.length;
 
   return (
     <div className="page-wrapper">
@@ -143,6 +178,91 @@ const Collection = () => {
         </div>
       </nav>
 
+
+      <div className="container-premium-book">
+        <div
+          className={`book-visual-area ${isHovered ? "book-focus" : ""} ${
+            isSwitching ? "book-switching" : ""
+          }`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="book-3d-canvas">
+            <div className="book-bookmarks-container">
+              {["uz", "ru", "en"].map((l) => (
+                <div key={l} className={`magic-bookmark ${l}`}>
+                  <span className="bookmark-text">{l.toUpperCase()}</span>
+                </div>
+              ))}
+            </div>
+
+            {currentBook.pages.map((page, index) => (
+              <div
+                key={`${currentBook.id}-${page.id}-${index}`}
+                className={`book-leaf ${
+                  index < currentPage ? "is-flipped" : ""
+                } ${index === currentPage ? "active-leaf" : ""}`}
+                style={{ zIndex: totalPages - index }}
+              >
+                <div className="leaf-side front">
+                  {page.isCover ? (
+                    <div className="book-cover-wrapper">
+                      <img src={page.img} alt="Cover" className="main-cover-img" />
+                      <div className="spine-shadow"></div>
+                    </div>
+                  ) : (
+                    <div className="inner-page-design">
+                      <img src={page.img} alt="page" className="page-full-photo" />
+                    </div>
+                  )}
+                </div>
+                <div className="leaf-side back">
+                  <div className="inner-page-design">
+                    <img
+                      src={page.backImg || assets.photo_1}
+                      alt="back"
+                      className="page-full-photo"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="book-navigation">
+            {/* <button
+              className="action-button"
+              onClick={handleFlip}
+              disabled={isFlying}
+              style={{ display: activeBookIndex === 1 ? "none" : "block" }} 
+            >
+              {currentPage < totalPages ? t("next_page") : t("restart")}
+            </button> */}
+            {/* <button className="action-button next-book-btn" onClick={nextBook}>
+              {t("soon")}
+            </button> */}
+          </div>
+        </div>
+
+        <div className="hhh">
+          <div className={`book-text-area ${isHovered ? "text-fade" : ""}`}>
+            <h1>
+              {currentBook.text}
+              <span className="book-span"></span>
+            </h1>
+            <p className="summary-p">{currentBook.summary}</p>
+          </div>
+          <p className={`books-summary-bottom ${isHovered ? "text-fade" : ""}`}>
+            {t("bottom_text")}
+          </p>
+          {/* <button className={`books-button-bottom ${isHovered ? "text-fade" : ""}`}>
+            <Link to={currentBook.path}>{t("about_book")}</Link>
+          </button> */}
+        </div>
+      </div>
+
+
+
       <div className="books-layout-container">
         {/* <div className="column books-visual-column">
           <div className="books-shadow-wrapper-second">
@@ -208,7 +328,7 @@ const Collection = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

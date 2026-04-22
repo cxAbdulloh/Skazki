@@ -31,7 +31,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  background-color: #fdfaf5; /* Rasmlardagi fon rangi */
+  background-color: #fdfaf5; 
   border-radius: 12px;
 }
 
@@ -52,10 +52,10 @@
 }
 
 .social-link-item:hover {
-  color: #c9963a; /* Oltinrang hover effekti */
+  color: #c9963a; 
 }
 
-/* Ikonka rangi alohida ajralib turishi uchun */
+
 .social-link-item svg {
   color: #c9963a; 
   width: 25px;
@@ -122,7 +122,7 @@
   color: white;
 }
 
-/* HAMBURGER */
+
 .hamburger {
   display: none;
   cursor: pointer;
@@ -431,4 +431,6 @@
   display: flex;
   align-items: center;
   gap: 30px;
-}
+} 
+
+ 

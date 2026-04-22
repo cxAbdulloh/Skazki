@@ -126,7 +126,7 @@ const BooksSection = () => {
               className="action-button"
               onClick={handleFlip}
               disabled={isFlying}
-              style={{ display: activeBookIndex === 1 ? "none" : "block" }} // IKINCHI KITOBDA DISPLAY NONE
+              style={{ display: activeBookIndex === 1 ? "none" : "block" }} 
             >
               {currentPage < totalPages ? t("next_page") : t("restart")}
             </button>

@@ -9,8 +9,9 @@ body {
   font-family: "Trebuchet MS", sans-serif;
   color: var(--ink);
   overflow-x: hidden;
-}
+} 
 
 a {
   text-decoration: none;
 }
+
