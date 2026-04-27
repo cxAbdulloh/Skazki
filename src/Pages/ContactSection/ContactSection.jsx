@@ -74,7 +74,7 @@ const ContactSection = () => {
                   <p>{t("contact_telegram_desc")}</p>
                 </div>
               </div>
-              <a href="https://t.me/fotoskaz_bot" className="apple-button">{t("contact_chat_btn")}</a>
+              <a href="https://t.me/Fotoskazki_bot" className="apple-button">{t("contact_chat_btn")}</a>
             </div>
           </div>
         </div>

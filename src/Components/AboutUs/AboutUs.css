@@ -8,7 +8,6 @@
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: 40px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(142, 45, 226, 0.2);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,16 +27,16 @@
 .gold-dot {
   width: 8px;
   height: 8px;
-  background-color: #8e2de2; /* Tilla o'rniga binafsha */
+  background-color: #8e2de2;
   border-radius: 50%;
   margin-top: 10px;
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(142, 45, 226, 0.4); /* Soya binafsha tusda */
+  box-shadow: 0 0 10px rgba(142, 45, 226, 0.4);
 }
 
 .about-main-desc {
   font-size: 1.1rem;
-  color: #1a1a2e; /* Matn rangi yangilandi */
+  color: #1a1a2e;
   line-height: 1.8;
   margin: 0;
 }
@@ -54,18 +53,6 @@
   font-style: italic;
 }
 
-.instagram-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #8e2de2; /* Tilla o'rniga binafsha */
-  font-weight: 600;
-}
-
-.insta-icon {
-  stroke: #8e2de2; 
-}
-
 .about-plus-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -76,32 +63,81 @@
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(30px) saturate(210%);
   -webkit-backdrop-filter: blur(30px) saturate(210%);
-  backdrop-filter: blur(10px);
   padding: 25px 20px;
   border-radius: 24px;
-  border: 1px solid rgba(142, 45, 226, 0.2); 
-  box-shadow: 0 10px 40px rgba(0,0,0,0.02), 0 20px 80px rgba(0,0,0,0.05);
+  border: 1px solid rgba(142, 45, 226, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02), 0 20px 80px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .plus-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.9);
-  border-color: #8e2de2; 
   box-shadow: 0 15px 30px rgba(142, 45, 226, 0.1);
 }
 
 .plus-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.plus-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.8px;
+}
+
+.plus-card[data-icon-type="blue"] .plus-icon {
+  background-color: rgba(0, 122, 255, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 122, 255, 0.03);
+}
+
+.plus-card[data-icon-type="blue"] .plus-icon svg {
+  color: #007aff;
+}
+
+.plus-card[data-icon-type="orange"] .plus-icon {
+  background-color: rgba(255, 149, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(255, 149, 0, 0.03);
+}
+
+.plus-card[data-icon-type="orange"] .plus-icon svg {
+  color: #ff9500;
+}
+
+.plus-card[data-icon-type="purple"] .plus-icon {
+  background-color: rgba(142, 45, 226, 0.08);
+  box-shadow: 0 4px 10px rgba(142, 45, 226, 0.03);
+}
+
+.plus-card[data-icon-type="purple"] .plus-icon svg {
+  color: #8e2de2;
+}
+
+.plus-card[data-icon-type="green"] .plus-icon {
+  background-color: rgba(52, 211, 153, 0.08);
+  box-shadow: 0 4px 10px rgba(52, 211, 153, 0.03);
+}
+
+.plus-card[data-icon-type="green"] .plus-icon svg {
+  color: #34d399;
 }
 
 .plus-card h3 {
   font-size: 1rem;
-  color: #1a1a2e; 
+  color: #1a1a2e;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .plus-card p {
@@ -135,7 +171,7 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #4a00e0; /* Yashil o'rniga binafsha/ko'k */
+  color: #4a00e0;
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;

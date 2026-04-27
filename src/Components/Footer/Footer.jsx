@@ -37,7 +37,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://t.me/fotoskaz_bot"
+            href="https://t.me/Fotoskazki_bot"
             target="_blank"
             rel="noreferrer"
             className="social-link tg"

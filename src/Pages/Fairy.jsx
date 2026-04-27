@@ -155,7 +155,7 @@ const Fairy = () => {
           </div>
           <div className="bottom-button-containers">
             <button className="accordion-button">
-              <a href="https://t.me/fotoskaz_bot" target="_blank" rel="noreferrer">
+              <a href="https://t.me/Fotoskazki_bot" target="_blank" rel="noreferrer">
                 {t("delevery")}
               </a>
             </button>

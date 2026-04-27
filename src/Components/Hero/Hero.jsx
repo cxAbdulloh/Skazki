@@ -30,7 +30,7 @@ const Hero = () => {
       
         <div className="hero-action-buttons">
           <button className="btn-dark-premium">
-            <a href="https://t.me/fotoskaz_bot">{t("create_fairy_tale")}</a>
+            <a href="https://t.me/Fotoskazki_bot">{t("create_fairy_tale")}</a>
           </button>
           <button className="btn-light-premium">
             Смотреть видео
