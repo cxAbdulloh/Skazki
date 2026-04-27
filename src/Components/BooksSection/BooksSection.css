@@ -231,6 +231,8 @@
   display: block;
 }
 
+
+
 .spine-shadow {
   position: absolute;
   top: 0;
@@ -830,16 +832,16 @@
 
 @media (max-width: 450px) {
   .book-tab-controller {
-    flex-direction: column; 
-    width: 90%; 
-    border-radius: 30px; 
+    flex-direction: column;
+    width: 90%;
+    border-radius: 30px;
     padding: 10px;
     gap: 8px;
   }
 
   .book-tab-btn {
-    width: 100%; 
-    justify-content: center; 
+    width: 100%;
+    justify-content: center;
     padding: 12px;
   }
 }
@@ -847,7 +849,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 25px;
+  padding: 15px 25px;
   border: none;
   background: transparent;
   border-radius: 25px;
