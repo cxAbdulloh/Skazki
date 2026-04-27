@@ -7,6 +7,8 @@ import Collection from "./Pages/Collection";
 import Loader from "./Loader";
 import Fairy from "./Pages/Fairy";
 import "./App.css"; 
+import ContactSection from "./Pages/ContactSection/ContactSection";
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,18 +28,12 @@ const App = () => {
           <Loader key="loader" />
         ) : (
           <div className="app-main-wrapper">
-            {/* Sehrli yulduzchalar foni */}
-            {/* <div className="magic-stars-overlay">
-              {[...Array(40)].map((_, i) => (
-                <div key={i} className="magic-star"></div>
-              ))}
-            </div> */}
-
             <Router>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/memory" element={<Collection />} />
                 <Route path="/fairy" element={<Fairy />} />
+                <Route path="/contact" element={<ContactSection/>}/>
               </Routes>
             </Router>
           </div>

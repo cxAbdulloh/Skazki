@@ -1,33 +1,29 @@
 export const translations = {
   uz: {
-    // Navbar & Common
     nav_contact: "Bog'lanish",
-    create_fairy_tale: "Ertak yaratish ✨",
+    create_fairy_tale: "Ertak yaratish ✦",
     story_by_ai: "AI tomonidan yaratilgan hikoya ✨",
     restart: "QAYTADAN BOSHLASH",
     the_end: "TAMOM",
 
-    // Hero Section
     hero_subtitle: "Orzuingni jonlantir!",
     hero_description:
       "Fotoskazki — orzular haqiqatga aylangan joy. Sizning farzandingiz uning fantaziyalari, istaklari va sevimli qahramonlari gavdalangan hikoyaning bosh qahramonidir. Biz kitob sahifalarida jonlanadigan va uzoq yillar xotirada qoladigan sehrli olamlarni yaratamiz. Farzandingizga o'z ko'zi bilan ko'radigan mo''jizani sovg'a qiling.",
 
-    // Books Section
     books_title: "Fotoskazki",
     books_summary:
       "Biz bolaning yuz xususiyatlarini 1:1 saqlagan holda sehrli hikoyalar yaratamiz. Syujet uning qiziqishlari, orzulari va sevimli qahramonlari atrofida quriladi. Bu shunchaki kitob emas — bu butun umrga tatigulik xotira.",
     premium_ai: "Premium AI ishlanmasi.",
     next_page: "Keyingisi ✦",
     finish: "Tamom ✨",
-
-    // Book Pages (Ertak sahifalari)
+    hero_main_title: "Har bir bola o‘z ",
+    hero_main_bottom: "ertagining qahramoniga aylanadi",
     page_cover: "Muqova",
     page_forest: "Sehrli O'rmon",
     page_hero: "Kichik Qahramon",
     page_night: "Yulduzli Tun",
     page_friends: "Yangi Do'stlar",
-
-    // Testimonials
+    badge_text: "Individual illyustratsiyalar",
     testimonials_title: "Qahramonlarimizning fikrlari",
     testi_1_role: "Jasur ritsar onasi",
     testi_1_text:
@@ -50,7 +46,7 @@ export const translations = {
     step_3_text: "Tasvir bir zumda jonlanadi!",
     qr_scan_try: "Sinab ko'rish uchun <br />skanerlang",
     book_tap_magic: "Sehrni ko'rish uchun skanerlang",
-    tap: "✨",
+    tap: "✦",
     restart: "Boshidan boshlash",
     soon: "Keyingi Kitob",
     text: "Xotira kundaligi",
@@ -83,8 +79,8 @@ export const translations = {
     bottom_text: "3 xil variant mavjud",
     soon: "Boshqa kitob",
     card_text: "Boshqa kitoblarimiz",
-    about_book: "Kitob haqida ✦",
-
+    about_book: "Kitob haqida",
+    text_3: "Ertaklar",
     title_1: "Kelajak avlodlar merosi",
     desc_1:
       "Sizning shaxsiy tarixingiz — farzandlaringiz va nabiralaringiz uchun bebaho tuhfadir. Har bir sahifa oilaviy qadriyatlarni va o‘tmishning eng issiq lahzalarini ehtiyotkorlik bilan saqlaydi.",
@@ -107,36 +103,74 @@ export const translations = {
 
     delevery: "Buyurtma berish ✦",
 
-
-
     second_title_1: "✨ Abadiy lahzalar sehri",
     second_title_2: "🎨 Tuyg'ularingizning shaxsiy arxivi",
     second_title_3: "💖 Yaqinlar uchun eng samimiy tuhfa",
     second_title_4: "📜 Betakror saxifalar",
     second_title_5: "🦄 Sevimli qahramonlar dunyosi",
+    other_products_title: "Boshqa kitoblar va mahsulotlarimiz:",
 
-    // Accordion tavsiflari (second_desc)
-    second_desc_1: "Bolajoningizning yuz tuzilishini 1:1 nisbatda saqlagan holda sehrli hikoyalar yaratamiz. Syujet esa uning qiziqishlari, orzulari va sevimli qahramonlari atrofida quriladi.",
-    second_desc_2: "Har bir fototakrorlanmas dunyo bo'lib, u aynan sizning farzandingiz uchun yaratiladi. Biz uning xarakteri va qiziqishlarini inobatga olgan holda, ularni jonli tarixga aylantiramiz.",
-    second_desc_3: "Bu shunchaki kitob emas — bu farzandingiz bilan butun umr qoladigan xotiradir. Bu o'z mehringiz va g'amxo'rligingizni izhor qilishning eng iliq yo'lidir.",
-    second_desc_4: "Biz sizning xotiralaringiz va suratlaringizni professional hikoyaga aylantiramiz hamda ulg'ayish tarixini go'zal va uyg'un muqovada saqlaymiz.",
-    second_desc_5: "Syujetga bolajoningizning sevimli hayvonlari yoki ertak qahramonlarini qo'shib, uni eng hayajonli sarguzashtning bosh qahramoniga aylantiramiz.",
+    second_desc_1:
+      "Bolajoningizning yuz tuzilishini 1:1 nisbatda saqlagan holda sehrli hikoyalar yaratamiz. Syujet esa uning qiziqishlari, orzulari va sevimli qahramonlari atrofida quriladi.",
+    second_desc_2:
+      "Har bir fototakrorlanmas dunyo bo'lib, u aynan sizning farzandingiz uchun yaratiladi. Biz uning xarakteri va qiziqishlarini inobatga olgan holda, ularni jonli tarixga aylantiramiz.",
+    second_desc_3:
+      "Bu shunchaki kitob emas — bu farzandingiz bilan butun umr qoladigan xotiradir. Bu o'z mehringiz va g'amxo'rligingizni izhor qilishning eng iliq yo'lidir.",
+    second_desc_4:
+      "Biz sizning xotiralaringiz va suratlaringizni professional hikoyaga aylantiramiz hamda ulg'ayish tarixini go'zal va uyg'un muqovada saqlaymiz.",
+    second_desc_5:
+      "Syujetga bolajoningizning sevimli hayvonlari yoki ertak qahramonlarini qo'shib, uni eng hayajonli sarguzashtning bosh qahramoniga aylantiramiz.",
+    sooon: "Tez kunda...",
+    hero_families_text: "hursand oilalar",
 
+    nav_about: "Biz haqimizda",
+    nav_price: "Narxlar",
+
+
+   foto_ramki: "Rasm Ramkasi",
+  
+
+
+
+    price_title: "Narxlar",
+    price_subtitle: "20×30 sm o'lchamdagi fotokitoblar formatlari",
+    
+    // Cards
+    price_card_standard: "Standart",
+    price_card_premium: "Premium",
+    price_popular_badge: "Ommabop",
+    price_currency: "so'm",
+    
+    price_pages_6: "6 ta razvorot (12 sahifa)",
+    price_pages_10: "10 ta razvorot (20 sahifa)",
+    price_illus_6: "6 ta mualliflik illyustratsiyasi",
+    price_illus_10: "10 ta mualliflik illyustratsiyasi",
+    price_ar_included: "1 ta sahifani jonlantirish (ichida)",
+    
+    // Important info
+    price_important_title: "Juda muhim",
+    price_prepayment_title: "50% oldindan to'lov",
+    price_prepayment_desc: "Buyurtma rasmiylashtirilgach to'lanadi. Syujet jamoamiz fantaziyasiga asoslanadi.",
+    price_express_title: "Tezkor tayyorlash",
+    price_express_desc: "Qo'shimcha to'lov — +500 000 so'mdan boshlanadi (muddatga qarab).",
+    price_extra_ar_title: "Qo'shimcha jonlantirish",
+    price_extra_ar_desc: "Har bir qo'shimcha jonlantirish (animatsiya) uchun — +150 000 so'm.",
+    price_deadline_title: "Muddatlar",
+    price_deadline_desc: "Tayyorlanish muddati — foto va to'lov qabul qilingandan so'ng 3 haftagacha.",
+    price_footer_note: "Shaxsiy syujet yoki tuzatishlar kiritish boshlang'ich bosqichda muhokama qilinadi.",
   },
   ru: {
-    // Navbar & Common
     nav_contact: "Связаться",
-    create_fairy_tale: "Создать сказку ✨",
+    create_fairy_tale: "Создать сказку ✦",
     story_by_ai: "Story by AI ✨",
     restart: "RESTART",
     the_end: "THE END",
-
-    // Hero Section
+    nav_about: "О нас",
+    nav_price: "Цены",
     hero_subtitle: "Оживи свою мечту!",
     hero_description:
       "Фотосказки, где мечты становятся реальностью. Ваш ребёнок — главный герой истории, где воплощаются его фантазии, желания и любимые образы. Мы создаём волшебные миры, которые словно оживают на страницах книги и остаются в памяти на долгие годы. Подарите ребёнку волшебство, которое он увидит своими глазами.",
 
-    // Books Section
     books_title: "Fotoskazki",
     books_summary:
       "Мы создаём волшебные истории, где сохраняются все черты лица ребёнка 1:1, а сюжет строится вокруг его интересов, мечт и любимых героев. Это не просто книга — это память, которая остаётся с ребёнком на всю жизнь.",
@@ -144,14 +178,15 @@ export const translations = {
     next_page: "Следующий ✦",
     finish: "Конец ✨",
 
-    // Book Pages
+    other_products_title: "Остальные книги и наши продукты:",
     page_cover: "Обложка",
     page_forest: "Волшебный лес",
     page_hero: "Маленький герой",
     page_night: "Звездная ночь",
     page_friends: "Новые друзья",
-
-    // Testimonials
+    text_3: "Сказки",
+    hero_main_title: " Каждый ребёнок становится",
+    hero_main_bottom: "героем своей сказки",
     testimonials_title: "Отзывы наших героев",
     testi_1_role: "Мама юного рыцаря",
     testi_1_text:
@@ -162,7 +197,7 @@ export const translations = {
     testi_3_role: "Хранительница историй",
     testi_3_text:
       "Удивительный подход к созданию образа. Книга мгновенно стала самой любимой и ценной в нашей семейной библиотеке.",
-
+    badge_text: "Персональные иллюстрации",
     how_it_works_second: "Вы можете оживить книги✨",
     how_it_works: "Как это работает?",
     step_1_title: "Сканируйте QR-код",
@@ -174,7 +209,7 @@ export const translations = {
     step_3_text: "Изображение мгновенно оживает!",
     qr_scan_try: "Отсканируй, чтобы <br />попробовать",
     book_tap_magic: "Сканируй, чтобы увидеть магию",
-    tap: "✨",
+    tap: "✦",
 
     restart: "Начат заново",
     soon: "Другая книга",
@@ -209,7 +244,7 @@ export const translations = {
     main_title: "Сказки.",
     sooon: "Скоро...",
     card_text: "Остальные наши книги",
-    about_book: "О книге ✦",
+    about_book: "О книге",
 
     title_1: "О наследии для будущих поколений",
     desc_1:
@@ -233,19 +268,60 @@ export const translations = {
 
     delevery: "Заказать ✦",
 
-
-
     second_title_1: "✨ Магия вечных мгновений",
     second_title_2: "🎨 Личный архив ваших чувств",
     second_title_3: "💖 Самый искренний подарок близким",
     second_title_4: "📜 Летопись вашей уникальной жизни",
     second_title_5: "🦄 Мир любимых героев",
 
-    // Описания аккордеона (second_desc)
-    second_desc_1: "Мы создаём волшебные истории, где сохраняются все черты лица ребёнка 1:1, а сюжет строится вокруг его интересов, мечт и любимых героев.",
-    second_desc_2: "Каждая фотосказка — это уникальный мир, созданный специально для вашего ребёнка. Мы учитываем его характер и увлечения, превращая их в живую историю.",
-    second_desc_3: "Это не просто книга — это память, которая остаётся с ребёнком на всю жизнь. Самый теплый способ выразить свою любовь и заботу.",
-    second_desc_4: "Мы превращаем ваши воспоминания и фотографии в профессиональное повествование, сохраняя историю взросления в красивом и гармоничном переплете.",
-    second_desc_5: "Мы добавляем в сюжет любимых животных или сказочных персонажей вашего малыша, делая его главным героем самого захватывающего приключения.",
+    second_desc_1:
+      "Мы создаём волшебные истории, где сохраняются все черты лица ребёнка 1:1, а сюжет строится вокруг его интересов, мечт и любимых героев.",
+    second_desc_2:
+      "Каждая фотосказка — это уникальный мир, созданный специально для вашего ребёнка. Мы учитываем его характер и увлечения, превращая их в живую историю.",
+    second_desc_3:
+      "Это не просто книга — это память, которая остаётся с ребёнком на всю жизнь. Самый теплый способ выразить свою любовь и заботу.",
+    second_desc_4:
+      "Мы превращаем ваши воспоминания и фотографии в профессиональное повествование, сохраняя историю взросления в красивом и гармоничном переплете.",
+    second_desc_5:
+      "Мы добавляем в сюжет любимых животных или сказочных персонажей вашего малыша, делая его главным героем самого захватывающего приключения.",
+    hero_families_text: "счастливых семей",
+
+
+
+
+
+
+  foto_ramki: "Фото рамки",
+
+
+
+
+
+    price_title: "Стоимость",
+    price_subtitle: "Форматы фотокниг размером 20×30 см",
+    
+    // Cards
+    price_card_standard: "Стандарт",
+    price_card_premium: "Премиум",
+    price_popular_badge: "Популярный",
+    price_currency: "сум",
+    
+    price_pages_6: "6 разворотов (12 страниц)",
+    price_pages_10: "10 разворотов (20 страниц)",
+    price_illus_6: "6 авторских иллюстраций",
+    price_illus_10: "10 авторских иллюстраций",
+    price_ar_included: "Оживление 1 страницы (включено)",
+    
+    // Important info
+    price_important_title: "Очень важно",
+    price_prepayment_title: "Предоплата 50%",
+    price_prepayment_desc: "Вносится после оформления заказа. Сюжет на фантазии нашей команды.",
+    price_express_title: "Срочное выполнение",
+    price_express_desc: "Дополнительная плата — от +500 000 сум (зависит от сроков).",
+    price_extra_ar_title: "Доп. оживление",
+    price_extra_ar_desc: "За каждое дополнительное оживление (анимацию) — +150 000 сум.",
+    price_deadline_title: "Сроки",
+    price_deadline_desc: "Изготовление — до 3 недель с момента получения фото и предоплаты.",
+    price_footer_note: "Наличие собственного сюжета или правок обсуждается на начальном этапе."
   },
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { assets } from "./assets/assets"; // Papka strukturangizga qarab yo'lni tekshiring
+import { assets } from "./assets/assets";
 import "./Loader.css";
 
 const PARTICLE_COUNT = 30;
@@ -27,19 +27,18 @@ const Loader = () => {
         clearInterval(timer);
         return 100;
       });
-    }, 20); // 3 soniya atrofida yuklanadi
+    }, 20);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       className="loader-container"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      {/* SEHRLI ZARRALAR */}
       <div className="particles-background">
         {particles.map((particle) => (
           <motion.div
@@ -67,8 +66,7 @@ const Loader = () => {
       </div>
 
       <div className="loader-content">
-        {/* ASOSIY RASM */}
-        <motion.div 
+        <motion.div
           className="image-wrapper"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -76,7 +74,6 @@ const Loader = () => {
           <img src={assets.unicorn} alt="Logo" className="image-loader" />
         </motion.div>
 
-        {/* FOIZ KO'RSATKICHI */}
         <div className="progress-section">
           <span className="percentage">{count}%</span>
         </div>

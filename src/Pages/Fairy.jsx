@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../LanguageContext";
 import { Link } from "react-router-dom";
 import "./Fairy.css";
@@ -38,8 +38,6 @@ const Fairy = () => {
     }),
   };
 
-
-
   const booksCollection = [
     {
       id: "book1",
@@ -59,6 +57,15 @@ const Fairy = () => {
 
   const currentBook = booksCollection[activeBookIndex];
   const totalPages = currentBook.pages.length;
+
+  const [scrolled, setScrolled] = useState(false); // Skrol holati
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleFlip = () => {
     if (isFlying) return;
@@ -83,116 +90,100 @@ const Fairy = () => {
     }, 600);
   };
 
-
   const [openIndices, setOpenIndices] = useState([]);
 
   const toggleAccordion = (index) => {
-    setOpenIndices(
-      (prevIndices) =>
-        prevIndices.includes(index)
-          ? prevIndices.filter((i) => i !== index) 
-          : [...prevIndices, index] 
+    setOpenIndices((prevIndices) =>
+      prevIndices.includes(index)
+        ? prevIndices.filter((i) => i !== index)
+        : [...prevIndices, index]
     );
   };
 
   return (
     <div className="page-wrapper">
-      <nav className="navbar-nav">
-        <Link to="/" className="logo">
-          fotoskazki<span className="nav-span">.</span>
-        </Link>
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <div className="navbar-inner">
+          {" "}
+          <Link to={"/"} className="logo">
+            <img src={assets.nav} alt="" className="logo-image" />
+          </Link>
+          <div className="nav-controls-wrapper">
+            <div className="lang-dropdown-container">
+              <button
+                className="lang-trigger-btn"
+                onClick={() => setIsLangOpen(!isLangOpen)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                <span>{lang.toUpperCase()}</span>
+              </button>
 
-        {/* <div className="nav-center-link">
-          <a href="#about" className="nav-link">
-            {t("about_us")}
-          </a>
-        </div> */}
+              {isLangOpen && (
+                <div className="lang-menu">
+                  {["uz", "ru"].map((l) => (
+                    <div
+                      key={l}
+                      className="lang-option"
+                      onClick={() => {
+                        setLang(l);
+                        setIsLangOpen(false);
+                      }}
+                    >
+                      {l === "uz" ? "O'zbekcha" : "Русский"}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
-        <div className="nav-controls-wrapper">
-          <div className="lang-dropdown-container">
-            <button
-              className="lang-trigger-btn"
-              onClick={() => setIsLangOpen(!isLangOpen)}
+            <div
+              className={`hamburger ${isMenuOpen ? "active" : ""}`}
+              onClick={toggleMenu}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-              <span>{lang.toUpperCase()}</span>
-            </button>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </div>
 
-            {isLangOpen && (
-              <div className="lang-menu">
-                {["uz", "ru"].map((l) => (
-                  <div
-                    key={l}
-                    className="lang-option"
-                    onClick={() => {
-                      setLang(l);
-                      setIsLangOpen(false);
-                    }}
-                  >
-                    {l === "uz" ? "O'zbekcha" : "Русский"}
-                  </div>
-                ))}
+            <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
+              <div id="social-links-mobile">
+                <a
+                  href="https://t.me/fotoskaz_bot"
+                  target="_blank"
+                  className="social-link-item"
+                >
+                  <FontAwesomeIcon icon={faTelegram} />
+                  <span>Telegram</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/fotoskazki.uz/"
+                  target="_blank"
+                  className="social-link-item"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                  <span>Instagram</span>
+                </a>
               </div>
-            )}
-          </div>
-
-          <div
-            className={`hamburger ${isMenuOpen ? "active" : ""}`}
-            onClick={toggleMenu}
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </div>
-
-          <div className={`nav-right-group ${isMenuOpen ? "open" : ""}`}>
-            <div id="social-links-mobile">
-              <a
-                href="https://t.me/fotoskaz_bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link-item"
-              >
-                <FontAwesomeIcon icon={faTelegram} />
-                <span>Telegram</span>
-              </a>
-
-              {/* Instagram Link */}
-              <a
-                href="https://www.instagram.com/fotoskazki.uz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link-item"
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-                <span>Instagram</span>
+              <a href="tel:+998919767600" className="nav-btn">
+                {t("nav_contact")}
               </a>
             </div>
-            <a
-              href="tel:+998919767600"
-              className="nav-btn"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("nav_contact")}
-            </a>
           </div>
         </div>
       </nav>
-
-
 
       <div className="container-premium-book">
         <div
@@ -203,14 +194,6 @@ const Fairy = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className="book-3d-canvas">
-            <div className="book-bookmarks-container">
-              {["uz", "ru", "en"].map((l) => (
-                <div key={l} className={`magic-bookmark ${l}`}>
-                  <span className="bookmark-text">{l.toUpperCase()}</span>
-                </div>
-              ))}
-            </div>
-
             {currentBook.pages.map((page, index) => (
               <div
                 key={`${currentBook.id}-${page.id}-${index}`}
@@ -223,12 +206,20 @@ const Fairy = () => {
                 <div className="leaf-side front">
                   {page.isCover ? (
                     <div className="book-cover-wrapper">
-                      <img src={page.img} alt="Cover" className="main-cover-img" />
+                      <img
+                        src={page.img}
+                        alt="Cover"
+                        className="main-cover-img"
+                      />
                       <div className="spine-shadow"></div>
                     </div>
                   ) : (
                     <div className="inner-page-design">
-                      <img src={page.img} alt="page" className="page-full-photo" />
+                      <img
+                        src={page.img}
+                        alt="page"
+                        className="page-full-photo"
+                      />
                     </div>
                   )}
                 </div>
@@ -250,49 +241,31 @@ const Fairy = () => {
               className="action-button"
               onClick={handleFlip}
               disabled={isFlying}
-              style={{ display: activeBookIndex === 1 ? "none" : "block" }} 
+              style={{ display: activeBookIndex === 1 ? "none" : "block" }}
             >
               {currentPage < totalPages ? t("next_page") : t("restart")}
             </button>
-            {/* <button className="action-button next-book-btn" onClick={nextBook}>
-              {t("soon")}
-            </button> */}
           </div>
         </div>
 
-        <div className="hhh">
-          <div className={`book-text-area ${isHovered ? "text-fade" : ""}`}>
-            <h1>
-              {currentBook.text}
-              <span className="book-span"></span>
-            </h1>
-            <p className="summary-p">{currentBook.summary}</p>
+        <div className="qr-side-side">
+          <div className="qr-wrapper-container">
+            <img src={assets.qr_code} alt="QR Code" className="qr-img" />
+            <div className="qr-scan-line-line"></div>
           </div>
-          <p className={`books-summary-bottom ${isHovered ? "text-fade" : ""}`}>
-            {t("bottom_text")}
-          </p>
-          {/* <button className={`books-button-bottom ${isHovered ? "text-fade" : ""}`}>
-            <Link to={currentBook.path}>{t("about_book")}</Link>
-          </button> */}
+          <div className="qr-info-content">
+            <p className="qr-description">
+              К каждой книжке вы получаете <strong>одно видео к сказке</strong>,
+              которое работает по QR-коду.
+            </p>
+            <p className="qr-sub-description">
+              Дополнительно можно заказать оживление хоть всех страниц подряд!
+            </p>
+          </div>
         </div>
       </div>
 
-
-
-
       <div className="books-layout-container">
-        {/* <div className="column books-visual-column">
-          <div className="books-shadow-wrapper-second">
-            <motion.img
-              src={assets.photo_6}
-              alt=""
-              className="books-cover-image"
-              initial="hidden"
-              whileInView="visible"
-            />
-          </div>
-        </div> */}
-
         <div className="column books-text-column">
           <div className="books-text-content">
             <h1 className="books-main-title">{t("main_title")}</h1>
@@ -305,7 +278,7 @@ const Fairy = () => {
                     openIndices.includes(item) ? "active" : ""
                   }`}
                   key={item}
-                  onClick={() => toggleAccordion(item)} // Butun band bosilganda ochiladi
+                  onClick={() => toggleAccordion(item)}
                 >
                   <div className="accordion-header">
                     <h2>{t(`second_title_${item}`)}</h2>

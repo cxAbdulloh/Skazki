@@ -1,8 +1,8 @@
 :root {
   --primary-color: #1a1a1a;
-  --accent-color: #ffcc00;
-  --gold: #c9963a;
-  --forest: #2d5a3d;
+  --accent-color: #8e2de2;
+  --gold: #8e2de2;
+  --forest: #1a1a2e;
 }
 
 .books-section-wrapper {
@@ -60,7 +60,6 @@
   transform: rotateX(5deg) rotateY(-2deg);
 }
 
-/* --- MAGIC BOOKMARKS STYLE --- */
 .book-bookmarks-container {
   position: absolute;
   right: -45px;
@@ -72,54 +71,11 @@
   transform: translateZ(-10px);
 }
 
-.magic-bookmark {
-  position: relative;
-  width: 60px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: none;
-  border-radius: 0 12px 12px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 .bookmark-text {
   font-size: 11px;
   font-weight: 900;
-  color: var(--forest);
+  color: #4a00e0;
   letter-spacing: 1px;
-}
-
-.magic-bookmark.active {
-  width: 75px;
-  background: var(--gold);
-  border-color: var(--gold);
-}
-
-.magic-bookmark.active .bookmark-text {
-  color: #fff;
-}
-
-.magic-bookmark:hover {
-  width: 80px;
-  background: rgba(201, 150, 58, 0.3);
-}
-
-.magic-bookmark.uz {
-  border-right: 4px solid #c9963a;
-}
-.magic-bookmark.ru {
-  border-right: 4px solid #c9963a;
-}
-.magic-bookmark.en {
-  border-right: 4px solid #c9963a;
 }
 
 .bookmark-glow {
@@ -139,7 +95,6 @@
   opacity: 1;
 }
 
-/* --- KITOB SAHIFALARI --- */
 .book-leaf {
   position: absolute;
   width: 100%;
@@ -272,7 +227,7 @@
 }
 
 .main-cover-img {
-  object-fit: cover;
+  object-fit: fill;
   display: block;
 }
 
@@ -305,7 +260,10 @@
   border-left: 12px solid #234730;
   box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
 }
-.books-summary-bottom, .books-button-container, .books-button-bottom{
+.books-summary-bottom,
+.books-button-container,
+.books-button-bottom,
+.products-selector-wrapper.text-fade {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .books-summary-bottom.text-fade {
@@ -314,9 +272,65 @@
   pointer-events: none;
 }
 .books-summary-bottom {
-  margin-top: 10px;
+  margin-top: 50px;
   font-style: italic;
   color: #666;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.products-selector-wrapper {
+  margin-top: 30px;
+}
+.custom-selector-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.selector-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 13px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.card-icon {
+  font-size: 20px;
+}
+
+.active-dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #8e2de2;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(142, 45, 226, 0.5);
+}
+
+.selector-card:hover:not(.active) {
+  border-color: rgba(142, 45, 226, 0.4);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.selector-card:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+
+.products-selector-wrapper.text-fade {
+  opacity: 0.2;
+  transform: translateX(-30px);
+  pointer-events: none;
 }
 .books-button-container.text-fade {
   opacity: 0.2;
@@ -331,17 +345,20 @@
 .books-button-bottom {
   cursor: pointer;
   border-radius: 30px;
-  color: #c9963a;
+  color: #ffffff;
   background-color: transparent;
-  border: 2px solid #c9963a;
+  border: none;
   font-size: 16px;
-  padding: 13px 100px;
+  background: #8e2de2;
+  padding: 15px 50px;
   font-weight: 500;
-  margin-top: 20px;
   font-family: "Trebuchet MS", sans-serif;
 }
+.books-button-bottom:hover {
+  transform: translateY(-3px);
+}
 .books-button-bottom a {
-  color: #c9963a;
+  color: #ffffff;
 }
 @media (max-width: 568px) {
   .books-button-bottom {
@@ -365,17 +382,26 @@
   font-weight: 900;
   margin-bottom: 20px;
   letter-spacing: 3px;
-  color: var(--forest);
+  color: #1a1a2e;
   line-height: 1;
 }
 
 .book-span {
-  color: #1a1a1a;
+  color: #8e2de2;
 }
 .summary-p {
   font-size: 1.2rem;
-  color: #7a6a50;
+  color: #666;
   line-height: 1.6;
+}
+.custom-selector-container {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: fit-content;
 }
 
 .book-navigation {
@@ -387,6 +413,18 @@
   width: 100%;
 }
 
+.action-button-top,
+.action-button-bottom {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
 .action-button {
   padding: 15px 35px;
   border-radius: 30px;
@@ -402,7 +440,6 @@
 }
 
 .action-button:hover {
-  background: var(--gold);
   transform: translateY(-3px);
 }
 
@@ -413,27 +450,7 @@
 }
 
 .next-book-btn:hover {
-  background: var(--gold) !important;
   color: #fff !important;
-}
-
-/* --- RESPONSIVE QISMLARI --- */
-@media (max-width: 968px) {
-  .book-bookmarks-container {
-    right: -30px;
-    top: 30px;
-  }
-  .magic-bookmark {
-    width: 45px;
-    height: 35px;
-  }
-  .magic-bookmark.active {
-    width: 55px;
-  }
-  .book-3d-canvas {
-    width: 350px;
-    height: 450px;
-  }
 }
 
 .book-visual-area.book-switching {
@@ -466,10 +483,30 @@
     transform: scale(1.05);
   }
 }
-
+@media (max-width: 968px) {
+  .book-bookmarks-container {
+    right: -30px;
+    top: 30px;
+  }
+  .magic-bookmark {
+    width: 45px;
+    height: 35px;
+  }
+  .magic-bookmark.active {
+    width: 55px;
+  }
+  .book-3d-canvas {
+    width: 350px;
+    height: 450px;
+  }
+}
 @media (max-width: 768px) {
   .book-base-plate {
     display: none !important;
+  }
+
+  .products-selector-wrapper {
+    padding-left: 15px;
   }
 
   .book-leaf.is-flipped {
@@ -497,6 +534,16 @@
   .container-premium {
     flex-direction: column;
   }
+  .book-navigation {
+    flex-direction: column;
+    width: 100%;
+  }
+  .action-button {
+    width: 100%;
+  }
+  .books-button-bottom {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {
@@ -523,13 +570,6 @@
   }
   .summary-p {
     font-size: 1.1rem;
-  }
-  .action-button {
-    width: auto;
-    flex: 1;
-    padding: 12px 15px;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
   }
   .book-leaf.is-flipped {
     transform: rotateY(-105deg) scale(0.9);
@@ -608,49 +648,7 @@
   z-index: 10;
   backdrop-filter: blur(4px);
 }
-/* Bulutcha effekti (Skoro...) */
-.coming-soon-cloud {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background: #fff;
-  border-radius: 50px;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  animation: floatCloud 3s ease-in-out infinite;
-  border: 1px solid var(--gold);
-}
 
-.coming-soon-cloud span {
-  color: var(--gold);
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-/* Bulutcha dumaloqchalari uchun */
-.coming-soon-cloud::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 20px;
-  width: 15px;
-  height: 15px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-}
-
-@keyframes floatCloud {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Badge stili tugma ichida */
 .soon-badge {
   font-size: 10px;
   background: var(--gold);
@@ -661,7 +659,6 @@
   text-transform: uppercase;
 }
 
-/* Matn o'zgarganda animatsiya */
 .book-text-area h1 {
   transition: all 0.5s ease;
 }
@@ -674,7 +671,7 @@
     transform: scale(0.8);
   }
 }
-/* Asosiy konteyner */
+
 .books-section-wrapper {
   display: flex;
   flex-direction: column;
@@ -706,7 +703,7 @@
 .title-underline {
   width: 80px;
   height: 2px;
-  background: #c9973a6b;
+  background: rgba(142, 45, 226, 0.4);
   border-radius: 10px;
 }
 

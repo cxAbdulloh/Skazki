@@ -21,8 +21,10 @@
 }
 
 .testimonial-card {
-  background: #ffffff;
-  border: 2px solid #e5dcc5;
+  background: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
+  border: 1px solid rgba(142, 45, 226, 0.2); 
   padding: 25px 35px;
   border-radius: 30px;
   width: 300px;

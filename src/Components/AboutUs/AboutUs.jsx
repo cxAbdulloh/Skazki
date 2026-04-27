@@ -3,6 +3,21 @@ import "./AboutUs.css";
 import { useLanguage } from "../../LanguageContext";
 
 
+const Icons = {
+  Palette: () => (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.647-.494 2.132-1.121a2.5 2.5 0 0 0 4.195-.411A10 10 0 1 0 12 2z"/></svg>
+  ),
+  Quality: () => (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"/></svg>
+  ),
+  Eco: () => (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8h-5.07A7 7 0 0 1 11 20z"/><path d="M11 20c-3.9 0-7-3.1-7-7 0-4.5 7-11 7-11s7 6.5 7 11c0 .4-.03.8-.1 1.2"/></svg>
+  ),
+  Delivery: () => (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polyline points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+  )
+};
+
 const AboutUs = () => {
   const { t } = useLanguage();
 
@@ -24,10 +39,7 @@ const AboutUs = () => {
               <span className="gold-dot"></span>
               <p className="about-main-desc">{t("about_description_2")}</p>
             </div>
-            {/* <div className="desc-wrapper">
-              <span className="gold-dot"></span>
-              <p className="about-main-desc">{t("about_description")}</p>
-            </div> */}
+
             <div className="social-info-area">
               <p className="social-text">{t("more_info_text")}</p>
               <div className="social-links-wrapper">
@@ -80,7 +92,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* O'ng tomonda plyuslar (Cards) */}
+ 
           <div className="about-plus-grid">
             <div className="plus-card">
               <span className="plus-icon">🎨</span>
