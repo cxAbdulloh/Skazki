@@ -126,48 +126,54 @@ export const translations = {
     nav_about: "Biz haqimizda",
     nav_price: "Narxlar",
 
-
-   foto_ramki: "Rasm Ramkasi",
-  
-
-
+    foto_ramki: "Xotira ramkasi",
 
     price_title: "Narxlar",
     price_subtitle: "20×30 sm o'lchamdagi fotokitoblar formatlari",
-    
+
     // Cards
     price_card_standard: "Standart",
     price_card_premium: "Premium",
     price_popular_badge: "Ommabop",
     price_currency: "so'm",
-    
+
     price_pages_6: "6 ta razvorot (12 sahifa)",
     price_pages_10: "10 ta razvorot (20 sahifa)",
     price_illus_6: "6 ta mualliflik illyustratsiyasi",
     price_illus_10: "10 ta mualliflik illyustratsiyasi",
     price_ar_included: "1 ta sahifani jonlantirish (ichida)",
-    
+
     // Important info
     price_important_title: "Juda muhim",
     price_prepayment_title: "50% oldindan to'lov",
-    price_prepayment_desc: "Buyurtma rasmiylashtirilgach to'lanadi. Syujet jamoamiz fantaziyasiga asoslanadi.",
+    price_prepayment_desc:
+      "Buyurtma rasmiylashtirilgach to'lanadi. Syujet jamoamiz fantaziyasiga asoslanadi.",
     price_express_title: "Tezkor tayyorlash",
-    price_express_desc: "Qo'shimcha to'lov — +500 000 so'mdan boshlanadi (muddatga qarab).",
+    price_express_desc:
+      "Qo'shimcha to'lov — +500 000 so'mdan boshlanadi (muddatga qarab).",
     price_extra_ar_title: "Qo'shimcha jonlantirish",
-    price_extra_ar_desc: "Har bir qo'shimcha jonlantirish (animatsiya) uchun — +150 000 so'm.",
+    price_extra_ar_desc:
+      "Har bir qo'shimcha jonlantirish (animatsiya) uchun — +150 000 so'm.",
     price_deadline_title: "Muddatlar",
-    price_deadline_desc: "Tayyorlanish muddati — foto va to'lov qabul qilingandan so'ng 3 haftagacha.",
-    price_footer_note: "Shaxsiy syujet yoki tuzatishlar kiritish boshlang'ich bosqichda muhokama qilinadi.",
+    price_deadline_desc:
+      "Tayyorlanish muddati — foto va to'lov qabul qilingandan so'ng 3 haftagacha.",
+    price_footer_note:
+      "Shaxsiy syujet yoki tuzatishlar kiritish boshlang'ich bosqichda muhokama qilinadi.",
 
-    "contact_office": "Ofis",
-    "contact_address": "Toshkent, O'zbekiston",
-    "contact_district": "Yunusobod tumani, Markaz-4",
-    "contact_call": "Qo'ng'iroq",
-    "contact_social": "Ijtimoiy tarmoq",
-    "contact_subscribe": "Obuna bo'ling",
-    "contact_telegram_title": "Telegram Bot",
-    "contact_telegram_desc": "Savollar va buyurtmalar uchun",
-    "contact_chat_btn": "O'tish"
+    contact_office: "Ofis",
+    contact_address: "Toshkent, O'zbekiston",
+    contact_district: "Yunusobod tumani, Markaz-4",
+    contact_call: "Qo'ng'iroq",
+    contact_social: "Ijtimoiy tarmoq",
+    contact_subscribe: "Obuna bo'ling",
+    contact_telegram_title: "Telegram Bot",
+    contact_telegram_desc: "Savollar va buyurtmalar uchun",
+    contact_chat_btn: "O'tish",
+    memory_3:
+      "Biz nafaqat yuqori sifatli foto ramkalar tayyorlaymiz, balki ularga sehrli imkoniyatlarni ham qo'shamiz. Har bir ramka o‘zida video xotirani yashiradi — shunchaki smartfoningizni suratga qarating va eng qadrli lahzalaringiz ekraningizda qayta jonlanishini tomosha qiling. Bu shunchaki surat emas, bu sizni o‘sha baxtli lahzaga qaytaruvchi jonli xotiradir.",
+    text_4: "Xotira ramkalari",
+
+    book_title_second: "Xotira kundaligi",
   },
   ru: {
     nav_contact: "Связаться",
@@ -251,7 +257,7 @@ export const translations = {
     plus_4_desc:
       "Мы доставим ваш волшебный заказ прямо к вашей двери в кратчайшие сроки.",
     more_info_text: "Для полной информации",
-    main_title: "Сказки.",
+    main_title: "Сказки",
     sooon: "Скоро...",
     card_text: "Остальные наши книги",
     about_book: "О книге",
@@ -278,11 +284,11 @@ export const translations = {
 
     delevery: "Заказать ✦",
 
-    second_title_1: "✨ Магия вечных мгновений",
-    second_title_2: "🎨 Личный архив ваших чувств",
-    second_title_3: "💖 Самый искренний подарок близким",
-    second_title_4: "📜 Летопись вашей уникальной жизни",
-    second_title_5: "🦄 Мир любимых героев",
+    second_title_1: "Магия вечных мгновений",
+    second_title_2: "Личный архив ваших чувств",
+    second_title_3: "Самый искренний подарок близким",
+    second_title_4: "Летопись вашей уникальной жизни",
+    second_title_5: "Мир любимых героев",
 
     second_desc_1:
       "Мы создаём волшебные истории, где сохраняются все черты лица ребёнка 1:1, а сюжет строится вокруг его интересов, мечт и любимых героев.",
@@ -296,54 +302,53 @@ export const translations = {
       "Мы добавляем в сюжет любимых животных или сказочных персонажей вашего малыша, делая его главным героем самого захватывающего приключения.",
     hero_families_text: "счастливых семей",
 
-
-
-
-
-
-  foto_ramki: "Фото рамки",
-
-
-
-
+    foto_ramki: "Фото рамки",
 
     price_title: "Стоимость",
     price_subtitle: "Форматы фотокниг размером 20×30 см",
-    
+    book_title_second: "Дневник памяти",
     // Cards
     price_card_standard: "Стандарт",
     price_card_premium: "Премиум",
     price_popular_badge: "Популярный",
     price_currency: "сум",
-    
+
     price_pages_6: "6 разворотов (12 страниц)",
     price_pages_10: "10 разворотов (20 страниц)",
     price_illus_6: "6 авторских иллюстраций",
     price_illus_10: "10 авторских иллюстраций",
     price_ar_included: "Оживление 1 страницы (включено)",
-    
+
     // Important info
     price_important_title: "Очень важно",
     price_prepayment_title: "Предоплата 50%",
-    price_prepayment_desc: "Вносится после оформления заказа. Сюжет на фантазии нашей команды.",
+    price_prepayment_desc:
+      "Вносится после оформления заказа. Сюжет на фантазии нашей команды.",
     price_express_title: "Срочное выполнение",
-    price_express_desc: "Дополнительная плата — от +500 000 сум (зависит от сроков).",
+    price_express_desc:
+      "Дополнительная плата — от +500 000 сум (зависит от сроков).",
     price_extra_ar_title: "Доп. оживление",
-    price_extra_ar_desc: "За каждое дополнительное оживление (анимацию) — +150 000 сум.",
+    price_extra_ar_desc:
+      "За каждое дополнительное оживление (анимацию) — +150 000 сум.",
     price_deadline_title: "Сроки",
-    price_deadline_desc: "Изготовление — до 3 недель с момента получения фото и предоплаты.",
-    price_footer_note: "Наличие собственного сюжета или правок обсуждается на начальном этапе.",
+    price_deadline_desc:
+      "Изготовление — до 3 недель с момента получения фото и предоплаты.",
+    price_footer_note:
+      "Наличие собственного сюжета или правок обсуждается на начальном этапе.",
 
+    contact_office: "Офис",
+    contact_address: "Ташкент, Узбекистан",
+    contact_district: "Яшнабадский район, махалля Учкудук",
+    contact_call: "Звонок",
+    contact_social: "Соцсети",
+    contact_subscribe: "Подписаться",
+    contact_telegram_title: "Telegram Бот",
+    contact_telegram_desc: "Для вопросов и заказов",
+    contact_chat_btn: "Перейти",
 
+    text_4: "Фото Рамки",
 
-    "contact_office": "Офис",
-    "contact_address": "Ташкент, Узбекистан",
-    "contact_district": "Яшнабадский район, махалля Учкудук",
-    "contact_call": "Звонок",
-    "contact_social": "Соцсети",
-    "contact_subscribe": "Подписаться",
-    "contact_telegram_title": "Telegram Бот",
-    "contact_telegram_desc": "Для вопросов и заказов",
-    "contact_chat_btn": "Перейти"
+    memory_3:
+      "Мы создаем не просто качественные фоторамки, а добавляем им магическую возможность. Каждая рамка скрывает в себе видео-воспоминание — просто наведите смартфон на фото, и ваши самые ценные моменты оживут прямо на экране. Это больше, чем просто фотография; это живое мгновение, которое позволяет вам снова и снова возвращаться в тот самый счастливый день.",
   },
 };

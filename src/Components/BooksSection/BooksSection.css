@@ -761,3 +761,67 @@
   margin-top: 100px;
   margin-bottom: 30px;
 }
+
+.book-tab-controller {
+  display: flex;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 6px;
+  border-radius: 30px;
+  gap: 5px;
+  margin: 30px 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: fit-content;
+}
+
+.book-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 30px;
+  border: none;
+  background: transparent;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1d1d1f;
+}
+
+.book-tab-btn span {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.book-tab-btn.active {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.book-tab-btn.active svg {
+  color: #8e2de2;
+}
+
+.book-tab-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .book-tab-controller {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: center;
+  }
+  
+  .book-tab-btn {
+    padding: 8px 15px;
+  }
+  
+  .book-tab-btn span {
+    font-size: 12px;
+  }
+}
+

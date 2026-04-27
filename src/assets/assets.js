@@ -1,5 +1,6 @@
 import book from "./book.png"
 import book_2 from "./book_2.png"
+import book_3 from "./book_3.png"
 import cloud from "./cloud.png"
 
 
@@ -35,6 +36,7 @@ import nav from "./nav.png"
 export const assets = {
     book,
     book_2,
+    book_3,
     background,
     nav,
 
