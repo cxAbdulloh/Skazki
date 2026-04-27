@@ -73,7 +73,7 @@ export const translations = {
     plus_4_title: "Tezkor yetkazib berish",
     plus_4_desc:
       "Sizning mo'jizaviy buyurtmangizni qisqa muddatda eshigingiz tagiga yetkazamiz.",
-
+    contact_us: "Bog'lanish",
     more_info_text: "To'liq ma'lumot olish uchun",
     main_title: "Ertaklar.",
     bottom_text: "3 xil variant mavjud",
@@ -158,6 +158,16 @@ export const translations = {
     price_deadline_title: "Muddatlar",
     price_deadline_desc: "Tayyorlanish muddati — foto va to'lov qabul qilingandan so'ng 3 haftagacha.",
     price_footer_note: "Shaxsiy syujet yoki tuzatishlar kiritish boshlang'ich bosqichda muhokama qilinadi.",
+
+    "contact_office": "Ofis",
+    "contact_address": "Toshkent, O'zbekiston",
+    "contact_district": "Yunusobod tumani, Markaz-4",
+    "contact_call": "Qo'ng'iroq",
+    "contact_social": "Ijtimoiy tarmoq",
+    "contact_subscribe": "Obuna bo'ling",
+    "contact_telegram_title": "Telegram Bot",
+    "contact_telegram_desc": "Savollar va buyurtmalar uchun",
+    "contact_chat_btn": "O'tish"
   },
   ru: {
     nav_contact: "Связаться",
@@ -210,7 +220,7 @@ export const translations = {
     qr_scan_try: "Отсканируй, чтобы <br />попробовать",
     book_tap_magic: "Сканируй, чтобы увидеть магию",
     tap: "✦",
-
+    contact_us: "Связаться",
     restart: "Начат заново",
     soon: "Другая книга",
     diary_summary:
@@ -322,6 +332,18 @@ export const translations = {
     price_extra_ar_desc: "За каждое дополнительное оживление (анимацию) — +150 000 сум.",
     price_deadline_title: "Сроки",
     price_deadline_desc: "Изготовление — до 3 недель с момента получения фото и предоплаты.",
-    price_footer_note: "Наличие собственного сюжета или правок обсуждается на начальном этапе."
+    price_footer_note: "Наличие собственного сюжета или правок обсуждается на начальном этапе.",
+
+
+
+    "contact_office": "Офис",
+    "contact_address": "Ташкент, Узбекистан",
+    "contact_district": "Яшнабадский район, махалля Учкудук",
+    "contact_call": "Звонок",
+    "contact_social": "Соцсети",
+    "contact_subscribe": "Подписаться",
+    "contact_telegram_title": "Telegram Бот",
+    "contact_telegram_desc": "Для вопросов и заказов",
+    "contact_chat_btn": "Перейти"
   },
 };

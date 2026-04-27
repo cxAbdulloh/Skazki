@@ -8,6 +8,9 @@ import Loader from "./Loader";
 import Fairy from "./Pages/Fairy";
 import "./App.css"; 
 import ContactSection from "./Pages/ContactSection/ContactSection";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+
 
 
 const App = () => {
@@ -29,6 +32,7 @@ const App = () => {
         ) : (
           <div className="app-main-wrapper">
             <Router>
+              <Navbar/>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/memory" element={<Collection />} />

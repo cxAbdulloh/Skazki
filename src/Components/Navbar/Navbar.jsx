@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { useLanguage } from "../../LanguageContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
@@ -41,7 +42,9 @@ const Navbar = () => {
       >
         <div className="nav-content">
           <div className="nav-logo">
-            <img src={assets.nav} className="logo-image" />
+            <Link to={"/"}>
+              <img src={assets.nav} className="logo-image" />
+            </Link>
           </div>
 
           <ul className={`nav-links ${isNavActive ? "open" : ""}`}>
@@ -56,9 +59,9 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={() => setIsNavActive(false)}>
-                {t("collection")}
-              </a>
+              <Link to={"/contact"} onClick={() => setIsNavActive(false)}>
+                {t("contact_us")}
+              </Link>
             </li>
             <li className="mobile-only-item">
               <a href="#contact" className="contact-btn mobile-contact-btn">
