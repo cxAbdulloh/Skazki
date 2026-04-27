@@ -828,7 +828,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .book-tab-controller {
     flex-direction: column; 
     width: 90%; 
