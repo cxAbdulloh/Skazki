@@ -12,7 +12,7 @@
 }
 
 .apple-nav.scrolled {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(246, 246, 246, 0.46);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -298,7 +298,7 @@
   top: calc(100% + 10px);
   right: 0;
   width: 140px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(246, 246, 246, 0.46);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
