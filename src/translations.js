@@ -103,11 +103,11 @@ export const translations = {
 
     delevery: "Buyurtma berish ✦",
 
-    second_title_1: "✨ Abadiy lahzalar sehri",
-    second_title_2: "🎨 Tuyg'ularingizning shaxsiy arxivi",
-    second_title_3: "💖 Yaqinlar uchun eng samimiy tuhfa",
-    second_title_4: "📜 Betakror saxifalar",
-    second_title_5: "🦄 Sevimli qahramonlar dunyosi",
+    second_title_1: "Abadiy lahzalar sehri",
+    second_title_2: "Tuyg'ularingizning shaxsiy arxivi",
+    second_title_3: "Yaqinlar uchun eng samimiy tuhfa",
+    second_title_4: "Betakror saxifalar",
+    second_title_5: "Sevimli qahramonlar dunyosi",
     other_products_title: "Boshqa kitoblar va mahsulotlarimiz:",
 
     second_desc_1:
@@ -174,7 +174,21 @@ export const translations = {
     text_4: "Xotira ramkalari",
 
     book_title_second: "Xotira kundaligi",
+
+    price_memory_diary_title: "Xotira kundaligi",
+    price_memory_pages: "20 sahifa (foto va matn)",
+    price_memory_covers: "Eksklyuziv individual muqovalar",
+    price_memory_ar: "3 ta jonli animatsiya",
+    price_memory_box: "Yog'och va baxmalli premium quti",
+
+    testi_4_text: "Juda ajoyib xizmat, bolajonlarimizga juda yoqdi!",
+    testi_5_text: "Sifat va tezkorlik bo'yicha gap bo'lishi mumkin emas.",
+    testi_6_text: "Kitoblar dizayni va animatsiyalari hayratlanarli.",
+    button_tes: "Hammasini ko'rish",
+    button_tes_tes: "Kamroq ko'rsatish",
+    instagram_news: "Yangiliklarni kuzating",
   },
+
   ru: {
     nav_contact: "Связаться",
     create_fairy_tale: "Создать сказку ✦",
@@ -350,5 +364,19 @@ export const translations = {
 
     memory_3:
       "Мы создаем не просто качественные фоторамки, а добавляем им магическую возможность. Каждая рамка скрывает в себе видео-воспоминание — просто наведите смартфон на фото, и ваши самые ценные моменты оживут прямо на экране. Это больше, чем просто фотография; это живое мгновение, которое позволяет вам снова и снова возвращаться в тот самый счастливый день.",
+
+    price_memory_diary_title: "Дневник памяти",
+    price_memory_pages: "20 страниц (фото и текст)",
+    price_memory_covers: "Индивидуальные обложки (без повторов)",
+    price_memory_ar: "3 оживления (AR)",
+    price_memory_box: "Премиальная упаковка из дерева и бархата",
+
+    testi_5_text: "Очень хороший сервис, нашим детям очень понравилось!",
+    testi_4_text:
+      "О качестве и скорости и речи быть не может, всё на высшем уровне.",
+    testi_6_text: "Дизайн и анимация книг просто потрясающие.",
+    button_tes: "Показать все",
+    button_tes_tes: "Показать меньше",
+    instagram_news: "Следите за новостями",
   },
 };

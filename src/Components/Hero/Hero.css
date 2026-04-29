@@ -55,22 +55,19 @@
   margin-bottom: 25px;
 }
 
-/* Yangilangan, o'qish oson bo'lgan premium gradient */
 .hero-gradient-text {
   font-style: italic;
   background: linear-gradient(90deg, #a042df 0%, #50136d91 50%, #e91e63 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  opacity: 0.9; /* Biroq yumshatish uchun */
+  opacity: 0.9;
 }
 
-/* Sarlavhadagi tilla nuqta */
 .title-dot {
   -webkit-text-fill-color: #e91e63;
 }
 
-/* Tavsif matni rangini yorqinroq kulrangga o'zgartiramiz */
 .hero-sub-description {
   font-size: 18px;
   color: var(--text-secondary);
@@ -87,11 +84,11 @@
 
 .btn-dark-premium {
   background: var(--text-main);
-  color: white;
+  color: #fff;
   padding: 16px 35px;
   border-radius: 50px;
   border: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -110,23 +107,29 @@
 }
 
 .btn-light-premium {
-  background: rgba(29, 29, 31, 0.05); /* Sovuqroq oqish fond */
+  background: rgba(29, 29, 31, 0.05);
   color: var(--text-main);
-  padding: 16px 35px;
+  padding: 14px 28px;
   border-radius: 50px;
   border: none;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 15px;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-family: "Trebuchet MS", sans-serif;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn-light-premium:hover {
-  background: rgba(29, 29, 31, 0.1); /* hover effekti */
+  background: rgba(29, 29, 31, 0.1);
+  transform: scale(1.02);
 }
 
-/* Avatarlar va Yulduzchalar */
+.instagram-icon {
+  color: #e4405f;
+}
+
 .hero-social-proof {
   display: flex;
   align-items: center;
@@ -144,7 +147,9 @@
   border: 2px solid #fff;
   margin-left: -12px;
 }
-
+.insta a {
+  color: #1d1d1f;
+}
 .av-color-1 {
   background-color: #c476f1;
   margin-left: 0;
@@ -163,7 +168,7 @@
   text-align: left;
 }
 
-/* Yulduzchalar rangini yorqinlashtiramiz */
+
 .stars-row {
   color: var(--gold-bright);
   font-size: 14px;

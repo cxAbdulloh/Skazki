@@ -1,6 +1,6 @@
 .books-layout-container {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   max-width: 1200px;
@@ -10,17 +10,16 @@
   gap: 50px;
 }
 
-
 .books-visual-column {
   flex: 1;
   display: flex;
-  justify-content: center; 
-  align-items: center;   
+  justify-content: center;
+  align-items: center;
 }
 
 .books-shadow-wrapper-second {
   width: 100%;
-  max-width: 400px; 
+  max-width: 400px;
   display: flex;
   justify-content: center;
 }
@@ -37,7 +36,7 @@
 .second-accordion-button a {
   color: #fff;
 }
-/* Matn ustuni */
+
 .books-text-column {
   flex: 1;
   display: flex;
@@ -50,7 +49,7 @@
   font-weight: 900;
   margin-bottom: 30px;
   letter-spacing: 2px;
-  color: #1a1a2e; 
+  color: #1a1a2e;
   line-height: 1.1;
 }
 
@@ -77,7 +76,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #8e2de2; 
+  color: #8e2de2;
   margin: 0;
 }
 
@@ -104,7 +103,7 @@
 }
 .second-accordion-button {
   cursor: pointer;
-  background-color: #8e2de2; 
+  background-color: #8e2de2;
   border-radius: 30px;
   font-size: 16px;
   max-width: max-content;
@@ -118,7 +117,7 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  width: 100%; 
+  width: 100%;
 }
 .second-accordion-button:hover {
   transform: translateY(-3px);
@@ -138,7 +137,7 @@
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 600px; 
+  max-height: 600px;
 }
 
 .description {
@@ -149,27 +148,27 @@
   margin: 0;
 }
 
- @media (max-width: 599px) {
+@media (max-width: 599px) {
   .second-accordion-button {
     max-width: none;
     margin-top: -5px;
   }
- }
- @media (max-width: 568px) {
+}
+@media (max-width: 568px) {
   .bottom-button-containers {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     width: 100%;
   }
 
-  .accordion-button, 
+  .accordion-button,
   .second-accordion-button {
-    max-width: 100% !important; 
+    max-width: 100% !important;
     width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    padding: 14px 0; 
+    padding: 14px 0;
   }
 
   .second-accordion-button a {

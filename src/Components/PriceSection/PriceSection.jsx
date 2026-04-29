@@ -121,6 +121,7 @@ const PriceSection = () => {
         pagesKey: "price_pages_6", 
         illusKey: "price_illus_6", 
         isPopular: false,
+        highlightKey: "price_ar_included",
       },
       {
         id: 2,
@@ -129,22 +130,19 @@ const PriceSection = () => {
         pagesKey: "price_pages_10", 
         illusKey: "price_illus_10", 
         isPopular: true,
+        highlightKey: "price_ar_included",
       },
     ],
     memory: [
       {
         id: 3,
-        title: "Memory Lite",
-        price: "800 000",
-        pages: "20",
-        isPopular: false,
-      },
-      {
-        id: 4,
-        title: "Memory Pro",
-        price: "1 200 000",
-        pages: "40",
+        title: t("price_card_standard"),
+        price: "2 500 000",
+        pagesKey: "price_memory_pages",
+        illusKey: "price_memory_covers",
+        descriptionKey: "price_memory_ar",
         isPopular: true,
+        highlightKey: "price_memory_box", 
       },
     ],
     frames: [
@@ -154,6 +152,7 @@ const PriceSection = () => {
         price: "350 000",
         pages: "15x20",
         isPopular: false,
+        highlightKey: "price_ar_included",
       },
       {
         id: 6,
@@ -161,6 +160,7 @@ const PriceSection = () => {
         price: "550 000",
         pages: "30x40",
         isPopular: true,
+        highlightKey: "price_ar_included",
       },
     ],
   };
@@ -179,7 +179,7 @@ const PriceSection = () => {
         className="header-area"
       >
         <h1>{t("price_title")}</h1>
-        <p>{t("price_subtitle")}</p>
+        {/* <p>{t("price_subtitle")}</p> */}
       </motion.div>
 
       <div className="tab-controller">
@@ -195,31 +195,28 @@ const PriceSection = () => {
         ))}
       </div>
 
-      <div className="pricing-grid">
+      <div className={`pricing-grid ${pricingData[activeTab].length === 1 ? "single-layout" : ""}`}>
         <AnimatePresence mode="wait">
           {pricingData[activeTab].map((card) => (
             <motion.div
               key={card.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
               className={`price-card ${card.isPopular ? "popular" : ""}`}
             >
-              {card.isPopular && (
-                <span className="badge">{t("price_popular_badge")}</span>
-              )}
+              {card.isPopular && <span className="badge">{t("price_popular_badge")}</span>}
               <h3 className="card-title">{card.title}</h3>
               <div className="price-tag">
                 <span className="amount">{card.price}</span>
                 <span className="currency">{t("price_currency")}</span>
               </div>
-              <ul className="features">
-                <li>{t(card.pagesKey)}</li>
 
-                <li>{t(card.illusKey)}</li>
+              <ul className="features">
+                {card.pagesKey && <li>{t(card.pagesKey)}</li>}
+                {card.illusKey && <li>{t(card.illusKey)}</li>}
+                {card.descriptionKey && <li>{t(card.descriptionKey)}</li>}
+                {card.pages && <li>{card.pages}</li>}
+                
                 <li className="highlight">
-                  <SFSymbols.Sparkles /> {t("price_ar_included")}
+                  <SFSymbols.Sparkles /> {t(card.highlightKey)}
                 </li>
               </ul>
             </motion.div>

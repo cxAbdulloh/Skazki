@@ -7,7 +7,6 @@ const Collection = () => {
   const { t } = useLanguage();
   const [activeBookIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isFlying, setIsFlying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [openIndices, setOpenIndices] = useState([]);
 
